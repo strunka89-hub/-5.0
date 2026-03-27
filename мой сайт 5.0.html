@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Дарьяна Ушакова - Промпт-инженер и веб-кодер. Помогаю говорить с нейросетями так, чтобы они стали соавторами">
+<title>Дарьяна Ушакова | Промпт-инженер & Веб-кодер</title>
+
+<!-- Канонический адрес: перед публикацией замените https://example.com на ваш домен (везде одинаково). Превью соцсетей: hero-image.png, портрет в Schema — about-photo.png -->
+<!-- ✨ Микроразметка Schema.org для SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Дарьяна Ушакова",
+  "jobTitle": "Промпт-инженер & Веб-кодер",
+  "url": "https://example.com/",
+  "image": "https://example.com/about-photo.png",
+  "email": "strunka89@yandex.ru",
+  "sameAs": [
+    "https://t.me/UshakovaDariana",
+    "https://vk.com/ai.content.expert"
+  ],
+  "knowsAbout": ["Prompt Engineering", "Web Development", "AI Automation", "No-Code"]
+}
+</script>
+
+<!-- ✨ Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:title" content="Дарьяна Ушакова | Промпт-инженер & Веб-кодер">
+<meta property="og:description" content="Помогаю говорить с нейросетями так, чтобы они стали соавторами. Автоматизирую рутину → освобождаю время для жизни">
+<meta property="og:image" content="https://example.com/hero-image.png">
+<meta property="og:image:alt" content="Первый экран сайта: профессиональный образ и цифровые технологии">
+<meta property="og:locale" content="ru_RU">
+
+<!-- ✨ Twitter Card -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/">
+<meta property="twitter:title" content="Дарьяна Ушакова | Промпт-инженер & Веб-кодер">
+<meta property="twitter:description" content="Помогаю говорить с нейросетями так, чтобы они стали соавторами">
+<meta property="twitter:image" content="https://example.com/hero-image.png">
+<meta name="twitter:image:alt" content="Первый экран сайта: профессиональный образ и цифровые технологии">
+
+<!-- ✨ Preload критического изображения -->
+<link rel="preload" as="image" href="hero-image.png">
+
+<!-- Fonts: preconnect + неблокирующая загрузка CSS шрифтов (media=print → all после onload; display=swap в URL) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap"></noscript>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-container">
+    <a href="#" class="logo">Дарьяна<span>.Ушакова</span></a>
+    <ul class="nav-links">
+      <li><a href="#services" data-i18n="nav.services">Услуги</a></li>
+      <li><a href="#calculator" data-i18n="nav.calculator">Калькулятор</a></li>
+      <li><a href="#about" data-i18n="nav.about">Обо мне</a></li>
+      <li><a href="#social" data-i18n="nav.social">Контент</a></li>
+      <li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button type="button" class="lang-switch" id="langSwitch" aria-label="Переключить на английский">EN</button>
+      <button type="button" class="mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>
+        <span data-i18n="hero.titleLine1">Дарьяна Ушакова | Промпт-инженер</span><br>
+        <span data-i18n="hero.titleLine2">&amp; Веб-кодер</span>
+      </h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Помогаю говорить с нейросетями так, чтобы они стали соавторами</p>
+      <p class="hero-text" data-i18n="hero.text">Автоматизирую рутину → освобождаю время для жизни</p>
+      <div class="hero-cta">
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fab fa-telegram-plane"></i> <span data-i18n="hero.cta1">Напишите — разберём вашу задачу</span>
+        </a>
+        <a href="#services" class="btn btn-secondary btn-secondary--on-dark" data-i18n="hero.cta2">Узнать больше</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="services.title">Услуги, которые освободят ваше время</h2>
+    <p class="section-subtitle fade-in" data-i18n="services.subtitle">Без сложных терминов. Без «волшебных таблеток». Только работающие решения.</p>
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
+        <h3 data-i18n="s1.title">ИИ, который начинает работать в вашем бизнесе</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s1.forWhoLabel">Для кого:</p>
+          <p data-i18n="s1.forWhoText">Если вы пробовали ИИ, но не получили результата</p>
+          <p class="service-block-title" data-i18n="s1.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s1.whatIDoText">Разбираю вашу задачу и создаю систему промптов под ваш бизнес (не шаблоны из интернета)</p>
+          <p class="service-block-title" data-i18n="s1.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s1.f1">готовые промпты под ваши задачи</li>
+            <li data-i18n="s1.f2">инструкции «как использовать»</li>
+            <li data-i18n="s1.f3">примеры под вашу нишу</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s1.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s1.result">👉 экономия 5–10 часов в неделю
+👉 контент и тексты без «затыка»</div>
+        </div>
+        <div class="service-price" data-i18n="s1.price">от 5 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s1.btn">Обсудить задачу</a>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+        <h3 data-i18n="s2.title">Сайт, который приносит заявки, а не просто «есть»</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s2.forWhoLabel">Для кого:</p>
+          <p data-i18n="s2.forWhoText">Если у вас нет сайта или он не даёт клиентов</p>
+          <p class="service-block-title" data-i18n="s2.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s2.whatIDoText">Анализирую ваш бизнес → собираю структуру → создаю сайт под заявки</p>
+          <p class="service-block-title" data-i18n="s2.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s2.f1">понятную структуру под вашу ЦА</li>
+            <li data-i18n="s2.f2">тексты, которые продают</li>
+            <li data-i18n="s2.f3">адаптацию под телефон</li>
+            <li data-i18n="s2.f4">готовую форму заявок</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s2.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s2.result">👉 сайт, который объясняет за вас и приводит клиентов
+👉 запуск за 5–7 дней без хаоса</div>
+        </div>
+        <div class="service-price" data-i18n="s2.price">от 25 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s2.btn">Хочу сайт</a>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-rocket"></i></div>
+        <h3 data-i18n="s3.title">Навожу порядок в бизнесе через ИИ (под ключ)</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s3.forWhoLabel">Для кого:</p>
+          <p data-i18n="s3.forWhoText">Если у вас хаос, рутина и нет времени на развитие</p>
+          <p class="service-block-title" data-i18n="s3.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s3.whatIDoText">Разбираю ваш бизнес по косточкам → нахожу, где теряете время → внедряю ИИ</p>
+          <p class="service-block-title" data-i18n="s3.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s3.f1">аудит процессов</li>
+            <li data-i18n="s3.f2">понятный план внедрения</li>
+            <li data-i18n="s3.f3">настроенные инструменты</li>
+            <li data-i18n="s3.f4">обучение + поддержка</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s3.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s3.result">👉 экономия 10–15 часов в неделю
+👉 система вместо хаоса
+👉 рост эффективности</div>
+        </div>
+        <div class="service-price" data-i18n="s3.price">от 50 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s3.btn">Разобрать мой бизнес</a>
+      </div>
+      <!-- Service 4 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
+        <h3 data-i18n="s4.title">Научу работать с ИИ без страха и перегруза</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s4.forWhoLabel">Для кого:</p>
+          <p data-i18n="s4.forWhoText">Если хотите сами использовать ИИ, но не понимаете как</p>
+          <p class="service-block-title" data-i18n="s4.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s4.whatIDoText">Объясняю простым языком, показываю на ваших задачах</p>
+          <p class="service-block-title" data-i18n="s4.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s4.f1">понимание, как работать с ИИ</li>
+            <li data-i18n="s4.f2">готовые шаблоны</li>
+            <li data-i18n="s4.f3">ответы на ваши вопросы</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s4.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s4.result">👉 уверенность в работе с ИИ
+👉 делаете задачи быстрее без помощи специалистов</div>
+        </div>
+        <div class="service-price" data-i18n="s4.price">от 3 000 ₽/час</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s4.btn">Записаться на обучение</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR SECTION -->
+<section class="calculator" id="calculator">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="calc.title">Рассчитайте стоимость вашего проекта</h2>
+    <div class="calculator-container fade-in">
+      <form id="calcForm">
+        <div class="calc-step">
+          <div class="calc-question" data-i18n="calc.q1">1. Что вам нужно?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="service" id="service1" value="prompts"><label for="service1" data-i18n="calc.s1">Промпты для ИИ</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service2" value="website"><label for="service2" data-i18n="calc.s2">Сайт/лендинг</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service3" value="complex"><label for="service3" data-i18n="calc.s3">Комплексное внедрение</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service4" value="training"><label for="service4" data-i18n="calc.s4">Обучение</label></div>
+          </div>
+        </div>
+        <div class="calc-step">
+          <div class="calc-question" data-i18n="calc.q2">2. Какой у вас бизнес?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="business" id="biz1" value="expert"><label for="biz1" data-i18n="calc.b1">Эксперт/фрилансер</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz2" value="small"><label for="biz2" data-i18n="calc.b2">Малый бизнес</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz3" value="school"><label for="biz3" data-i18n="calc.b3">Онлайн-школа</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz4" value="other"><label for="biz4" data-i18n="calc.b4">Другое</label></div>
+          </div>
+        </div>
+        <div class="calc-step">
+          <div class="calc-question" data-i18n="calc.q3">3. Срочность?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="urgency" id="urg1" value="normal"><label for="urg1" data-i18n="calc.u1">Не горит</label></div>
+            <div class="calc-option"><input type="radio" name="urgency" id="urg2" value="two-weeks"><label for="urg2" data-i18n="calc.u2">За 2 недели</label></div>
+            <div class="calc-option"><input type="radio" name="urgency" id="urg3" value="urgent"><label for="urg3" data-i18n="calc.u3">Нужно вчера 😅</label></div>
+          </div>
+        </div>
+        <button type="button" id="calcSubmitBtn" class="btn btn-primary btn-block btn-block-spaced" data-i18n="calc.submit">Рассчитать стоимость</button>
+      </form>
+      <div class="calc-result" id="calcResult">
+        <h3 class="calc-result-heading"><i class="fa-solid fa-chart-simple calc-result-heading__icon" aria-hidden="true"></i> <span data-i18n="calc.resultTitle">Предварительная стоимость</span></h3>
+        <div class="calc-price" id="calcPrice">от 5 000 ₽</div>
+        <div class="calc-timeline" id="calcTimeline">Срок: 3-5 дней</div>
+        <p class="calc-result-hint"><i class="fa-regular fa-lightbulb calc-result-hint__icon" aria-hidden="true"></i> <span data-i18n="calc.hint">Давайте обсудим детали в личном Telegram?</span></p>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-on-dark">
+          <i class="fab fa-telegram-plane"></i> <span data-i18n="calc.tgBtn">Написать Дарьяне в Telegram</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-container">
+      <div class="about-image fade-in">
+        <img src="about-photo.png" alt="Дарьяна Ушакова" data-i18n-alt="img.alt" loading="lazy" width="600" height="900">
+        <div class="about-hobbies">
+          <div class="hobby-item"><span class="hobby-icon" aria-hidden="true"><i class="fa-solid fa-scissors"></i></span><span data-i18n="about.hobby1">Макраме</span></div>
+          <div class="hobby-item"><span class="hobby-icon" aria-hidden="true"><i class="fa-solid fa-plane-up"></i></span><span data-i18n="about.hobby2">Путешествия</span></div>
+          <div class="hobby-item"><span class="hobby-icon" aria-hidden="true"><i class="fa-solid fa-people-roof"></i></span><span data-i18n="about.hobby3">Мама</span></div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <h2 data-i18n="about.h2">Не технарь с рождения, а живой человек, который нашёл свой путь</h2>
+        <p><strong data-i18n="about.p1">Привет! Я Дарьяна.</strong></p>
+        <p data-i18n="about.p2">По образованию экономист-бухгалтер (ни дня не работала по профессии 😅). Много путешествовала, открыла детский сад, воспитываю двух дочек (15 и 5 лет), люблю плести макраме.</p>
+        <p data-i18n="about.p3">А потом случайно наткнулась на нейросети...</p>
+        <p data-i18n="about.p4">Сначала использовала ИИ, чтобы улучшать фото своих работ по макраме. Потом прошла курс — и понеслось! Теперь не могу остановиться.</p>
+        <h3 style="margin: 30px 0 20px; color: var(--deep-blue);" data-i18n="about.h3">Почему я?</h3>
+        <ul class="about-list">
+          <li data-i18n="about.li1">Я не «технарь с рождения» — я помню, каково это, когда ничего не понятно</li>
+          <li data-i18n="about.li2">Объясняю сложное на мемах и аналогиях из жизни</li>
+          <li data-i18n="about.li3">Сначала вникаю в ваш бизнес, потом предлагаю решения</li>
+          <li data-i18n="about.li4">Не обещаю «миллионы за неделю» — показываю реальные результаты</li>
+        </ul>
+        <div class="about-mission">
+          <h4 data-i18n="about.mh">Моя миссия:</h4>
+          <p data-i18n="about.mp">Показать, что ИИ — это не замена человека, а помощник, который превращает рутинный хаос в работающие решения. И освобождает время для жизни.</p>
+        </div>
+        <p style="margin-top: 20px; font-style: italic; color: var(--purple);" data-i18n="about.ps">P.S. Когда не пишу промпты, плету макраме и планирую путешествия с семьёй 🧶️</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA SECTION -->
+<section class="social" id="social">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="social.title">Следите за моими проектами ВКонтакте</h2>
+    <p class="section-subtitle fade-in" data-i18n="social.subtitle">Я только начинаю свой путь в промпт-инжиниринге, поэтому мои первые кейсы появляются прямо сейчас. Присоединяйтесь — будем расти вместе!</p>
+    <div class="social-grid">
+      <div class="social-card vk fade-in">
+        <div class="social-icon"><i class="fab fa-vk"></i></div>
+        <h3 data-i18n="social.vkH">ВКонтакте: vk.com/ai.content.expert</h3>
+        <p data-i18n="social.vkP">Что там:</p>
+        <ul class="social-features">
+          <li data-i18n="social.vk1">Промпт-подарки каждую неделю</li>
+          <li data-i18n="social.vk2">Разборы страхов об ИИ («Без паники»)</li>
+          <li data-i18n="social.vk3">Как я использую ИИ в макраме и жизни</li>
+          <li data-i18n="social.vk4">Полезные гайды и инструкции</li>
+          <li data-i18n="social.vk5">Мои первые кейсы в реальном времени</li>
+        </ul>
+        <a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-vk-brand" data-i18n="social.vkBtn">Перейти в сообщество</a>
+      </div>
+      <div class="social-card telegram fade-in">
+        <div class="social-icon"><i class="fab fa-telegram-plane"></i></div>
+        <h3 data-i18n="social.tgH">Личный Telegram: @UshakovaDariana</h3>
+        <p data-i18n="social.tgP">Для чего:</p>
+        <ul class="social-features">
+          <li data-i18n="social.tg1">Написать мне напрямую</li>
+          <li data-i18n="social.tg2">Обсудить вашу задачу</li>
+          <li data-i18n="social.tg3">Задать вопрос после прочтения поста</li>
+          <li data-i18n="social.tg4">Договориться о консультации</li>
+        </ul>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="social.tgBtn">Написать Дарьяне</a>
+      </div>
+    </div>
+    <p class="social-note fade-in" data-i18n="social.note">«Я честно делюсь своим путём: что получается, а что нет. Без «успешного успеха» и прикрас. Подписывайтесь на сообщество ВКонтакте, а если есть вопрос — пишите в личный Telegram. Отвечу по-человечески 🤝»</p>
+  </div>
+</section>
+
+<!-- CONTACTS SECTION -->
+<section class="contacts" id="contacts">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="contacts.title">Давайте обсудим вашу задачу</h2>
+    <p class="section-subtitle fade-in" data-i18n="contacts.subtitle">Напишите — я отвечу в течение дня. Без навязчивых продаж, по-человечески.</p>
+    <div class="contacts-container">
+      <div class="contacts-info fade-in">
+        <h3 data-i18n="contacts.h3">Контактная информация</h3>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-telegram-plane"></i></div>
+          <div class="contact-text"><strong data-i18n="contacts.tg">Личный Telegram</strong><a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer">@UshakovaDariana</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-vk"></i></div>
+          <div class="contact-text"><strong data-i18n="contacts.vk">Сообщество ВКонтакте</strong><a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer">vk.com/ai.content.expert</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text"><strong data-i18n="contacts.email">Email</strong><a href="mailto:strunka89@yandex.ru">strunka89@yandex.ru</a></div>
+        </div>
+        <div class="contact-meta">
+          <p><strong data-i18n="contacts.meta1">🕐 Отвечаю:</strong> <span data-i18n="contacts.meta1b">в течение рабочего дня</span></p>
+          <p><strong data-i18n="contacts.meta2">💬 Формат:</strong> <span data-i18n="contacts.meta2b">сначала выслушаю, потом предложу решение</span></p>
+        </div>
+      </div>
+      <div class="contact-form fade-in">
+        <form id="contactForm" action="#" method="post">
+          <div class="form-group">
+            <label for="name" data-i18n="form.name">Ваше имя</label>
+            <input type="text" id="name" name="name" required data-i18n-placeholder="form.namePh" placeholder="Как к вам обращаться?">
+          </div>
+          <div class="form-group">
+            <label for="contact" data-i18n="form.contact">Ваш email или контакт для связи</label>
+            <input type="text" id="contact" name="contact" required data-i18n-placeholder="form.contactPh" placeholder="Telegram, email или телефон">
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form.msg">Что нужно сделать?</label>
+            <textarea id="message" name="message" required data-i18n-placeholder="form.msgPh" placeholder="Расскажите о вашей задаче..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="form.submit">Отправить</button>
+          <p class="form-privacy" data-i18n="form.privacy">Я не спамлю, честно. Ваши данные не передаю третьим лицам.</p>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle" style="font-size: 48px; margin-bottom: 15px;"></i>
+            <p data-i18n="form.success">Спасибо! Я получила ваше сообщение и отвечу вам в ближайшее время.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#calculator" data-i18n="nav.calculator">Калькулятор</a>
+      <a href="#about" data-i18n="nav.about">Обо мне</a>
+      <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+      <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer" data-i18n="footer.vk">ВКонтакте</a>
+    </div>
+    <p class="footer-copy"><span id="footerCopyLine" data-i18n="footer.copy">© {{YEAR}} Дарьяна Ушакова. Все права защищены.</span><br><span data-i18n="footer.tagline">Промпт-инженер & Веб-кодер</span></p>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="i18n.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

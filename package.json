@@ -1,0 +1,17 @@
+{
+  "name": "dariana-site",
+  "private": true,
+  "scripts": {
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint script.js build.mjs i18n.js",
+    "lint:css": "stylelint styles.css",
+    "build": "node build.mjs",
+    "ci": "npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "eslint": "^8.57.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
+  }
+}

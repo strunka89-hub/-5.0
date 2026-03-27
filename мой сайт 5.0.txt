@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Дарьяна Ушакова - Промпт-инженер и веб-кодер. Помогаю говорить с нейросетями так, чтобы они стали соавторами">
+<title>Дарьяна Ушакова | Промпт-инженер & Веб-кодер</title>
+
+<!-- ✨ Микроразметка Schema.org для SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Дарьяна Ушакова",
+  "jobTitle": "Промпт-инженер & Веб-кодер",
+  "url": "https://ваш-сайт.ru/",
+  "email": "strunka89@yandex.ru",
+  "sameAs": [
+    "https://t.me/UshakovaDariana",
+    "https://vk.com/ai.content.expert"
+  ],
+  "knowsAbout": ["Prompt Engineering", "Web Development", "AI Automation", "No-Code"]
+}
+</script>
+
+<!-- ✨ Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ваш-сайт.ru/">
+<meta property="og:title" content="Дарьяна Ушакова | Промпт-инженер & Веб-кодер">
+<meta property="og:description" content="Помогаю говорить с нейросетями так, чтобы они стали соавторами. Автоматизирую рутину → освобождаю время для жизни">
+<meta property="og:image" content="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1200&q=80">
+<meta property="og:locale" content="ru_RU">
+
+<!-- ✨ Twitter Card -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ваш-сайт.ru/">
+<meta property="twitter:title" content="Дарьяна Ушакова | Промпт-инженер & Веб-кодер">
+<meta property="twitter:description" content="Помогаю говорить с нейросетями так, чтобы они стали соавторами">
+<meta property="twitter:image" content="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=1200&q=80">
+
+<!-- ✨ Preload критического изображения -->
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1920&q=80">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ============================================
+CSS VARIABLES & RESET
+============================================ */
+:root {
+  --deep-blue: #1E3A5F;
+  --deep-blue-light: #2C5F7C;
+  --purple: #6B4E71;
+  --purple-light: #8B6F94;
+  --gray-dark: #4A5568;
+  --gray: #718096;
+  --gray-light: #A0AEC0;
+  --beige: #D4C4B0;
+  --beige-light: #E8D5C4;
+  --mint: #7FB098;
+  --sage: #88B04B;
+  --terracotta: #CC775A;
+  --terracotta-light: #D4846A;
+  --white: #FFFFFF;
+  --off-white: #F7FAFC;
+  --black: #0F172A;
+  --font-heading: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --section-padding: 80px 0;
+  --container-width: 1200px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+  --shadow-xl: 0 20px 40px rgba(0,0,0,0.2);
+  --transition: all 0.3s ease;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--gray-dark);
+  background-color: var(--off-white);
+  overflow-x: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--deep-blue);
+}
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ✨ Доступность фокуса */
+*:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 2px; }
+.btn:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 2px; }
+input:focus-visible, textarea:focus-visible { outline: 3px solid var(--mint); outline-offset: 2px; }
+
+/* ============================================
+UTILITIES
+============================================ */
+.container { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+.section-title { font-size: clamp(28px, 5vw, 40px); margin-bottom: 20px; text-align: center; }
+.section-subtitle { font-size: 18px; color: var(--gray); text-align: center; max-width: 600px; margin: 0 auto 50px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;
+  cursor: pointer; border: none; transition: var(--transition); text-align: center;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-light) 100%);
+  color: var(--white); box-shadow: var(--shadow-md);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.btn-secondary { background: var(--white); color: var(--deep-blue); border: 2px solid var(--deep-blue); }
+.btn-secondary:hover { background: var(--deep-blue); color: var(--white); }
+.btn-telegram { background: #24A1DE; color: var(--white); }
+.btn-telegram:hover { background: #1a91c7; transform: translateY(-2px); }
+
+/* ============================================
+NAVIGATION
+============================================ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm); z-index: 1000; transition: var(--transition);
+}
+.navbar.scrolled { box-shadow: var(--shadow-md); }
+.navbar-container {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 20px; max-width: var(--container-width); margin: 0 auto;
+}
+.logo { font-family: var(--font-heading); font-weight: 800; font-size: 24px; color: var(--deep-blue); }
+.logo span { color: var(--terracotta); }
+.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+.nav-links a { font-weight: 500; color: var(--gray-dark); position: relative; }
+.nav-links a:hover { color: var(--terracotta); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 2px; background: var(--terracotta); transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.mobile-menu-btn {
+  display: none; background: none; border: none;
+  font-size: 24px; cursor: pointer; color: var(--deep-blue);
+}
+
+/* ============================================
+HERO SECTION
+============================================ */
+.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center;
+  background: linear-gradient(135deg, var(--deep-blue) 0%, var(--purple) 100%);
+  overflow: hidden; padding-top: 80px;
+}
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.7); z-index: 1;
+}
+.hero-bg {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1920&q=80');
+  background-size: cover; background-position: center; opacity: 0.4;
+}
+.hero-content { position: relative; z-index: 2; color: var(--white); max-width: 800px; }
+.hero h1 { font-size: clamp(32px, 5vw, 56px); margin-bottom: 20px; color: var(--white); font-weight: 800; }
+.hero-subtitle { font-size: clamp(20px, 3vw, 28px); margin-bottom: 20px; color: var(--beige-light); font-weight: 300; }
+.hero-text { font-size: clamp(16px, 2vw, 20px); margin-bottom: 40px; color: var(--beige); opacity: 0.9; }
+.hero-cta { display: flex; gap: 20px; flex-wrap: wrap; }
+.scroll-indicator {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  color: var(--white); animation: bounce 2s infinite; z-index: 2;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ============================================
+SERVICES SECTION
+============================================ */
+.services { padding: var(--section-padding); background: var(--white); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+.service-card {
+  background: var(--off-white); border-radius: 16px; padding: 40px 30px;
+  transition: var(--transition); border: 2px solid transparent;
+  position: relative; overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--terracotta), var(--mint));
+  transform: scaleX(0); transition: transform 0.3s;
+}
+.service-card:hover {
+  transform: translateY(-5px); box-shadow: var(--shadow-xl); border-color: var(--beige-light);
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon { font-size: 48px; margin-bottom: 20px; }
+.service-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--deep-blue); }
+.service-card p { color: var(--gray); margin-bottom: 20px; line-height: 1.7; }
+.service-features { list-style: none; margin-bottom: 25px; }
+.service-features li {
+  padding: 8px 0; padding-left: 28px; position: relative; color: var(--gray-dark);
+}
+.service-features li::before { content: '✓'; position: absolute; left: 0; color: var(--mint); font-weight: bold; }
+.service-result {
+  background: var(--beige-light); padding: 12px; border-radius: 8px;
+  margin-bottom: 20px; font-weight: 600; color: var(--deep-blue); text-align: center;
+}
+.service-price { font-size: 24px; font-weight: 700; color: var(--terracotta); margin-bottom: 20px; text-align: center; }
+
+/* ============================================
+CALCULATOR SECTION
+============================================ */
+.calculator { padding: var(--section-padding); background: linear-gradient(135deg, var(--beige-light) 0%, var(--white) 100%); }
+.calculator-container {
+  max-width: 800px; margin: 0 auto; background: var(--white);
+  border-radius: 20px; padding: 50px; box-shadow: var(--shadow-lg);
+}
+.calc-step { margin-bottom: 30px; }
+.calc-question { font-size: 20px; font-weight: 600; margin-bottom: 20px; color: var(--deep-blue); }
+.calc-options { display: flex; flex-direction: column; gap: 12px; }
+.calc-option {
+  display: flex; align-items: center; padding: 15px 20px;
+  background: var(--off-white); border: 2px solid transparent;
+  border-radius: 10px; cursor: pointer; transition: var(--transition);
+}
+.calc-option:hover { border-color: var(--mint); background: var(--beige-light); }
+.calc-option input[type="radio"] { margin-right: 15px; width: 20px; height: 20px; accent-color: var(--terracotta); }
+.calc-option label { cursor: pointer; font-size: 16px; flex: 1; }
+.calc-result {
+  background: linear-gradient(135deg, var(--deep-blue) 0%, var(--purple) 100%);
+  color: var(--white); padding: 40px; border-radius: 16px;
+  text-align: center; margin-top: 40px; display: none;
+}
+.calc-result.active { display: block; animation: fadeIn 0.5s; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.calc-result h3 { color: var(--white); font-size: 28px; margin-bottom: 15px; }
+.calc-price { font-size: 48px; font-weight: 800; color: var(--beige); margin: 20px 0; }
+.calc-timeline { font-size: 20px; margin-bottom: 30px; opacity: 0.9; }
+
+/* ============================================
+ABOUT SECTION
+============================================ */
+.about { padding: var(--section-padding); background: var(--white); }
+.about-container { display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center; }
+.about-image { position: relative; }
+.about-image img { border-radius: 20px; box-shadow: var(--shadow-xl); }
+.about-hobbies {
+  position: absolute; bottom: -20px; right: -20px;
+  background: var(--white); padding: 20px; border-radius: 16px;
+  box-shadow: var(--shadow-lg); display: flex; gap: 15px;
+}
+.hobby-item { text-align: center; font-size: 12px; }
+.hobby-icon { font-size: 32px; display: block; margin-bottom: 5px; }
+.about-content h2 { font-size: 36px; margin-bottom: 30px; color: var(--deep-blue); }
+.about-content p { margin-bottom: 20px; color: var(--gray); line-height: 1.8; }
+.about-list { list-style: none; margin: 30px 0; }
+.about-list li { padding: 10px 0; padding-left: 35px; position: relative; }
+.about-list li::before { content: '✓'; position: absolute; left: 0; color: var(--mint); font-weight: bold; font-size: 20px; }
+.about-mission {
+  background: var(--beige-light); padding: 30px; border-radius: 16px;
+  margin-top: 30px; border-left: 4px solid var(--terracotta);
+}
+.about-mission h4 { color: var(--deep-blue); margin-bottom: 15px; font-size: 20px; }
+
+/* ============================================
+SOCIAL MEDIA SECTION
+============================================ */
+.social { padding: var(--section-padding); background: linear-gradient(135deg, var(--deep-blue) 0%, var(--purple) 100%); color: var(--white); }
+.social .section-title, .social .section-subtitle { color: var(--white); }
+.social .section-subtitle { opacity: 0.9; }
+.social-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; }
+.social-card {
+  background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+  border-radius: 20px; padding: 40px; transition: var(--transition);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.social-card:hover {
+  transform: translateY(-5px); background: rgba(255, 255, 255, 0.15); box-shadow: var(--shadow-xl);
+}
+.social-card.vk { border-color: #0077FF; }
+.social-card.telegram { border-color: #24A1DE; }
+.social-icon { font-size: 48px; margin-bottom: 20px; }
+.social-card.vk .social-icon { color: #0077FF; }
+.social-card.telegram .social-icon { color: #24A1DE; }
+.social-card h3 { color: var(--white); font-size: 24px; margin-bottom: 15px; }
+.social-card p { opacity: 0.9; margin-bottom: 25px; line-height: 1.7; }
+.social-features { list-style: none; margin-bottom: 25px; }
+.social-features li { padding: 8px 0; padding-left: 25px; position: relative; }
+.social-features li::before { content: '•'; position: absolute; left: 0; color: var(--beige); }
+.social-note {
+  text-align: center; margin-top: 50px; font-size: 18px; opacity: 0.9;
+  max-width: 700px; margin-left: auto; margin-right: auto;
+}
+
+/* ============================================
+CONTACTS SECTION
+============================================ */
+.contacts { padding: var(--section-padding); background: var(--off-white); }
+.contacts-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; margin: 0 auto; }
+.contacts-info h3 { font-size: 28px; margin-bottom: 30px; }
+.contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+.contact-icon { font-size: 24px; color: var(--terracotta); width: 30px; }
+.contact-text strong { display: block; color: var(--deep-blue); margin-bottom: 5px; }
+.contact-text a { color: var(--purple); text-decoration: underline; }
+.contact-text a:hover { color: var(--terracotta); }
+.contact-meta {
+  margin-top: 40px; padding: 25px; background: var(--white);
+  border-radius: 12px; box-shadow: var(--shadow-sm);
+}
+.contact-form { background: var(--white); padding: 40px; border-radius: 20px; box-shadow: var(--shadow-md); }
+.form-group { margin-bottom: 25px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--deep-blue); }
+.form-group input, .form-group textarea {
+  width: 100%; padding: 14px; border: 2px solid var(--gray-light);
+  border-radius: 8px; font-family: var(--font-body); font-size: 16px; transition: var(--transition);
+}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--mint); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-privacy { font-size: 14px; color: var(--gray); margin-top: 20px; text-align: center; }
+.form-success {
+  display: none; background: var(--mint); color: var(--white);
+  padding: 20px; border-radius: 8px; text-align: center; margin-top: 20px;
+}
+.form-success.active { display: block; animation: fadeIn 0.5s; }
+
+/* ============================================
+FOOTER
+============================================ */
+.footer { background: var(--deep-blue); color: var(--white); padding: 40px 0; text-align: center; }
+.footer-content { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+.footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--beige); transition: var(--transition); }
+.footer-links a:hover { color: var(--white); }
+.footer-copy { opacity: 0.8; font-size: 14px; }
+
+/* ============================================
+RESPONSIVE DESIGN
+============================================ */
+@media (max-width: 968px) {
+  .about-container, .contacts-container { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: 1fr; }
+  .about-image { max-width: 400px; margin: 0 auto; }
+  .about-hobbies { right: 0; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .mobile-menu-btn { display: block; }
+  .hero-cta { flex-direction: column; }
+  .calculator-container { padding: 30px 20px; }
+  .service-card { padding: 30px 20px; }
+  .contacts-container { gap: 40px; }
+  .contact-form { padding: 30px 20px; }
+}
+@media (max-width: 480px) {
+  :root { --section-padding: 60px 0; }
+  .hero h1 { font-size: 28px; }
+  .section-title { font-size: 24px; }
+  .calc-price { font-size: 36px; }
+}
+
+/* ============================================
+ANIMATIONS
+============================================ */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-container">
+    <a href="#" class="logo">Дарьяна<span>.Ушакова</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#calculator">Калькулятор</a></li>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#social">Контент</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Открыть меню" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1>Дарьяна Ушакова | Промпт-инженер & Веб-кодер</h1>
+      <p class="hero-subtitle">Помогаю говорить с нейросетями так, чтобы они стали соавторами</p>
+      <p class="hero-text">Автоматизирую рутину → освобождаю время для жизни</p>
+      <div class="hero-cta">
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fab fa-telegram-plane"></i> Напишите — разберём вашу задачу
+        </a>
+        <a href="#services" class="btn btn-secondary">Узнать больше</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title fade-in">Услуги, которые освободят ваше время</h2>
+    <p class="section-subtitle fade-in">Без сложных терминов. Без «волшебных таблеток». Только работающие решения.</p>
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card fade-in">
+        <div class="service-icon">🎯</div>
+        <h3>Научу нейросети понимать вас</h3>
+        <p>Создам промпты (запросы) для ИИ, которые работают именно в вашем бизнесе. Не шаблоны из интернета, а решения под ваши задачи.</p>
+        <ul class="service-features">
+          <li>Промпты для контента (посты, сценарии, идеи)</li>
+          <li>Промпты для продаж (ответы клиентам, скрипты)</li>
+          <li>Промпты для анализа (конкуренты, ЦА, идеи)</li>
+          <li>Инструкция: как использовать</li>
+        </ul>
+        <div class="service-result">Экономия 5-10 часов в неделю</div>
+        <div class="service-price">от 5 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="width: 100%; justify-content: center;">Обсудить задачу</a>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card fade-in">
+        <div class="service-icon">🌐</div>
+        <h3>Сайт, который работает на вас</h3>
+        <p>Сделаю лендинг или сайт-визитку, который не просто «красивый», а приносит заявки. Быстро. Без срывов сроков.</p>
+        <ul class="service-features">
+          <li>Анализ вашей ЦА и конкурентов</li>
+          <li>Структура и дизайн</li>
+          <li>Тексты (с помощью ИИ + моя редактура)</li>
+          <li>Адаптация под мобильные</li>
+          <li>Настройка форм заявки</li>
+        </ul>
+        <div class="service-result">Готовый сайт за 5-7 дней</div>
+        <div class="service-price">от 25 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="width: 100%; justify-content: center;">Хочу сайт</a>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-card fade-in">
+        <div class="service-icon">🚀</div>
+        <h3>Автоматизация под ключ</h3>
+        <p>Разберу ваш бизнес по косточкам, найду где ИИ сэкономит время, и внедрю решения. Научу вас или команду пользоваться.</p>
+        <ul class="service-features">
+          <li>Аудит процессов</li>
+          <li>Стратегия автоматизации</li>
+          <li>Настройка инструментов</li>
+          <li>Обучение</li>
+          <li>Поддержка 2 недели</li>
+        </ul>
+        <div class="service-result">Экономия 10-15 часов в неделю</div>
+        <div class="service-price">от 50 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="width: 100%; justify-content: center;">Разобрать мой бизнес</a>
+      </div>
+      <!-- Service 4 -->
+      <div class="service-card fade-in">
+        <div class="service-icon">📚</div>
+        <h3>Научу работать с ИИ самостоятельно</h3>
+        <p>Не хотите делегировать? Научу! Объясню на пальцах, без зауми. Поддержу, когда что-то не получится.</p>
+        <ul class="service-features">
+          <li>Индивидуальный разбор (1-2 часа)</li>
+          <li>Гайд с шаблонами промптов</li>
+          <li>Ответы на вопросы</li>
+        </ul>
+        <div class="service-result">Самостоятельно создаёте промпты</div>
+        <div class="service-price">от 3 000 ₽/час</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="width: 100%; justify-content: center;">Записаться на обучение</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR SECTION -->
+<section class="calculator" id="calculator">
+  <div class="container">
+    <h2 class="section-title fade-in">Рассчитайте стоимость вашего проекта</h2>
+    <div class="calculator-container fade-in">
+      <form id="calcForm">
+        <div class="calc-step">
+          <div class="calc-question">1. Что вам нужно?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="service" id="service1" value="prompts"><label for="service1">Промпты для ИИ</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service2" value="website"><label for="service2">Сайт/лендинг</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service3" value="complex"><label for="service3">Комплексное внедрение</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service4" value="training"><label for="service4">Обучение</label></div>
+          </div>
+        </div>
+        <div class="calc-step">
+          <div class="calc-question">2. Какой у вас бизнес?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="business" id="biz1" value="expert"><label for="biz1">Эксперт/фрилансер</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz2" value="small"><label for="biz2">Малый бизнес</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz3" value="school"><label for="biz3">Онлайн-школа</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz4" value="other"><label for="biz4">Другое</label></div>
+          </div>
+        </div>
+        <div class="calc-step">
+          <div class="calc-question">3. Срочность?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="urgency" id="urg1" value="normal"><label for="urg1">Не горит</label></div>
+            <div class="calc-option"><input type="radio" name="urgency" id="urg2" value="two-weeks"><label for="urg2">За 2 недели</label></div>
+            <div class="calc-option"><input type="radio" name="urgency" id="urg3" value="urgent"><label for="urg3">Нужно вчера 😅</label></div>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="calculatePrice()" style="width: 100%; justify-content: center; margin-top: 20px;">Рассчитать стоимость</button>
+      </form>
+      <div class="calc-result" id="calcResult">
+        <h3>📊 Предварительная стоимость</h3>
+        <div class="calc-price" id="calcPrice">от 5 000 ₽</div>
+        <div class="calc-timeline" id="calcTimeline">Срок: 3-5 дней</div>
+        <p style="margin-bottom: 25px; opacity: 0.9;">💡 Давайте обсудим детали в личном Telegram?</p>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: var(--white); color: var(--deep-blue);">
+          <i class="fab fa-telegram-plane"></i> Написать Дарьяне в Telegram
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-container">
+      <div class="about-image fade-in">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&q=80" alt="Дарьяна Ушакова" loading="lazy" width="600" height="800">
+        <div class="about-hobbies">
+          <div class="hobby-item"><span class="hobby-icon">🧶</span><span>Макраме</span></div>
+          <div class="hobby-item"><span class="hobby-icon">✈️</span><span>Путешествия</span></div>
+          <div class="hobby-item"><span class="hobby-icon">👨‍👩‍👧‍👧</span><span>Мама</span></div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <h2>Не технарь с рождения, а живой человек, который нашёл свой путь</h2>
+        <p><strong>Привет! Я Дарьяна.</strong></p>
+        <p>По образованию экономист-бухгалтер (ни дня не работала по профессии 😅). Много путешествовала, открыла детский сад, воспитываю двух дочек (15 и 5 лет), люблю плести макраме.</p>
+        <p>А потом случайно наткнулась на нейросети...</p>
+        <p>Сначала использовала ИИ, чтобы улучшать фото своих работ по макраме. Потом прошла курс — и понеслось! Теперь не могу остановиться.</p>
+        <h3 style="margin: 30px 0 20px; color: var(--deep-blue);">Почему я?</h3>
+        <ul class="about-list">
+          <li>Я не «технарь с рождения» — я помню, каково это, когда ничего не понятно</li>
+          <li>Объясняю сложное на мемах и аналогиях из жизни</li>
+          <li>Сначала вникаю в ваш бизнес, потом предлагаю решения</li>
+          <li>Не обещаю «миллионы за неделю» — показываю реальные результаты</li>
+        </ul>
+        <div class="about-mission">
+          <h4>Моя миссия:</h4>
+          <p>Показать, что ИИ — это не замена человека, а помощник, который превращает рутинный хаос в работающие решения. И освобождает время для жизни.</p>
+        </div>
+        <p style="margin-top: 20px; font-style: italic; color: var(--purple);">P.S. Когда не пишу промпты, плету макраме и планирую путешествия с семьёй 🧶️</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA SECTION -->
+<section class="social" id="social">
+  <div class="container">
+    <h2 class="section-title fade-in">Следите за моими проектами ВКонтакте</h2>
+    <p class="section-subtitle fade-in">Я только начинаю свой путь в промпт-инжиниринге, поэтому мои первые кейсы появляются прямо сейчас. Присоединяйтесь — будем расти вместе!</p>
+    <div class="social-grid">
+      <div class="social-card vk fade-in">
+        <div class="social-icon"><i class="fab fa-vk"></i></div>
+        <h3>ВКонтакте: vk.com/ai.content.expert</h3>
+        <p>Что там:</p>
+        <ul class="social-features">
+          <li>Промпт-подарки каждую неделю</li>
+          <li>Разборы страхов об ИИ («Без паники»)</li>
+          <li>Как я использую ИИ в макраме и жизни</li>
+          <li>Полезные гайды и инструкции</li>
+          <li>Мои первые кейсы в реальном времени</li>
+        </ul>
+        <a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: #0077FF; color: white; border: none;">Перейти в сообщество</a>
+      </div>
+      <div class="social-card telegram fade-in">
+        <div class="social-icon"><i class="fab fa-telegram-plane"></i></div>
+        <h3>Личный Telegram: @UshakovaDariana</h3>
+        <p>Для чего:</p>
+        <ul class="social-features">
+          <li>Написать мне напрямую</li>
+          <li>Обсудить вашу задачу</li>
+          <li>Задать вопрос после прочтения поста</li>
+          <li>Договориться о консультации</li>
+        </ul>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="width: 100%; justify-content: center;">Написать Дарьяне</a>
+      </div>
+    </div>
+    <p class="social-note fade-in">«Я честно делюсь своим путём: что получается, а что нет. Без «успешного успеха» и прикрас. Подписывайтесь на сообщество ВКонтакте, а если есть вопрос — пишите в личный Telegram. Отвечу по-человечески 🤝»</p>
+  </div>
+</section>
+
+<!-- CONTACTS SECTION -->
+<section class="contacts" id="contacts">
+  <div class="container">
+    <h2 class="section-title fade-in">Давайте обсудим вашу задачу</h2>
+    <p class="section-subtitle fade-in">Напишите — я отвечу в течение дня. Без навязчивых продаж, по-человечески.</p>
+    <div class="contacts-container">
+      <div class="contacts-info fade-in">
+        <h3>Контактная информация</h3>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-telegram-plane"></i></div>
+          <div class="contact-text"><strong>Личный Telegram</strong><a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer">@UshakovaDariana</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-vk"></i></div>
+          <div class="contact-text"><strong>Сообщество ВКонтакте</strong><a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer">vk.com/ai.content.expert</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text"><strong>Email</strong><a href="mailto:strunka89@yandex.ru">strunka89@yandex.ru</a></div>
+        </div>
+        <div class="contact-meta">
+          <p><strong>🕐 Отвечаю:</strong> в течение рабочего дня</p>
+          <p><strong>💬 Формат:</strong> сначала выслушаю, потом предложу решение</p>
+        </div>
+      </div>
+      <div class="contact-form fade-in">
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" onsubmit="submitForm(event)">
+          <div class="form-group">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" required placeholder="Как к вам обращаться?">
+          </div>
+          <div class="form-group">
+            <label for="contact">Ваш email или контакт для связи</label>
+            <input type="text" id="contact" name="contact" required placeholder="Telegram, email или телефон">
+          </div>
+          <div class="form-group">
+            <label for="message">Что нужно сделать?</label>
+            <textarea id="message" name="message" required placeholder="Расскажите о вашей задаче..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Отправить</button>
+          <p class="form-privacy">Я не спамлю, честно. Ваши данные не передаю третьим лицам.</p>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle" style="font-size: 48px; margin-bottom: 15px;"></i>
+            <p>Спасибо! Я получила ваше сообщение и отвечу вам в ближайшее время.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#services">Услуги</a>
+      <a href="#calculator">Калькулятор</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contacts">Контакты</a>
+      <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+    </div>
+    <p class="footer-copy">© <span id="currentYear">2024</span> Дарьяна Ушакова. Все права защищены.<br>Промпт-инженер & Веб-кодер</p>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// NAVBAR SCROLL EFFECT
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 50) { navbar.classList.add('scrolled'); } 
+  else { navbar.classList.remove('scrolled'); }
+});
+
+// MOBILE MENU TOGGLE
+function toggleMobileMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  const isExpanded = navLinks.style.display === 'flex';
+  navLinks.style.display = isExpanded ? 'none' : 'flex';
+  menuBtn.setAttribute('aria-expanded', !isExpanded);
+}
+
+// CALCULATOR LOGIC
+function calculatePrice() {
+  const service = document.querySelector('input[name="service"]:checked');
+  const business = document.querySelector('input[name="business"]:checked');
+  const urgency = document.querySelector('input[name="urgency"]:checked');
+  
+  if (!service || !business || !urgency) { alert('Пожалуйста, ответьте на все вопросы'); return; }
+  
+  const prices = {
+    'prompts': { base: 5000, timeline: '3-5 дней' },
+    'website': { base: 25000, timeline: '5-7 дней' },
+    'complex': { base: 50000, timeline: '2-3 недели' },
+    'training': { base: 3000, timeline: '1-2 часа' }
+  };
+  const urgencyMultipliers = { 'normal': 1, 'two-weeks': 1.2, 'urgent': 1.5 };
+  const businessAdjustments = { 'expert': 0, 'small': 5000, 'school': 10000, 'other': 0 };
+  
+  let basePrice = prices[service.value].base;
+  let multiplier = urgencyMultipliers[urgency.value];
+  let adjustment = businessAdjustments[business.value];
+  let finalPrice = (basePrice * multiplier) + adjustment;
+  
+  document.getElementById('calcPrice').textContent = 'от ' + finalPrice.toLocaleString('ru-RU') + ' ₽';
+  document.getElementById('calcTimeline').textContent = 'Срок: ' + prices[service.value].timeline;
+  document.getElementById('calcResult').classList.add('active');
+  document.getElementById('calcResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// CONTACT FORM SUBMISSION
+function submitForm(event) {
+  event.preventDefault();
+  const form = document.getElementById('contactForm');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn.textContent;
+  const formspreeID = 'YOUR_FORMSPREE_ID';
+  
+  let isSuccess = false;
+  
+  submitBtn.textContent = 'Отправка...';
+  submitBtn.disabled = true;
+  
+  const formData = {
+    name: document.getElementById('name').value,
+    contact: document.getElementById('contact').value,
+    message: document.getElementById('message').value
+  };
+  
+  // ✨ URL без пробелов
+  fetch(`https://formspree.io/f/${formspreeID}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    if (response.ok) {
+      isSuccess = true;
+      document.getElementById('formSuccess').classList.add('active');
+      form.reset();
+    } else { throw new Error('Ошибка отправки'); }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('⚠️ Ошибка сети. Форма не отправилась.\n\nПожалуйста, напишите мне напрямую в Telegram: @UshakovaDariana');
+  })
+  .finally(() => {
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+    if (isSuccess) {
+      setTimeout(() => { document.getElementById('formSuccess').classList.remove('active'); }, 5000);
+    }
+  });
+}
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// SMOOTH SCROLL FOR ANCHORS
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// FORM VALIDATION ENHANCEMENT
+document.querySelectorAll('input, textarea').forEach(input => {
+  input.addEventListener('blur', function() {
+    this.style.borderColor = this.value.trim() !== '' ? 'var(--mint)' : 'var(--gray-light)';
+  });
+});
+
+// Динамический год в футере
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
