@@ -17,7 +17,7 @@
   "email": "strunka89@yandex.ru",
   "sameAs": [
     "https://t.me/UshakovaDariana",
-    "https://vk.com/ai.content.expert"
+    "https://vk.com/ushakova_ai"
   ],
   "knowsAbout": ["Prompt Engineering", "Web Development", "AI Automation", "No-Code"]
 }
@@ -578,7 +578,7 @@ ANIMATIONS
     <div class="social-grid">
       <div class="social-card vk fade-in">
         <div class="social-icon"><i class="fab fa-vk"></i></div>
-        <h3>ВКонтакте: vk.com/ai.content.expert</h3>
+        <h3>ВКонтакте: vk.com/ushakova_ai</h3>
         <p>Что там:</p>
         <ul class="social-features">
           <li>Промпт-подарки каждую неделю</li>
@@ -587,7 +587,7 @@ ANIMATIONS
           <li>Полезные гайды и инструкции</li>
           <li>Мои первые кейсы в реальном времени</li>
         </ul>
-        <a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: #0077FF; color: white; border: none;">Перейти в сообщество</a>
+        <a href="https://vk.com/ushakova_ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="background: #0077FF; color: white; border: none;">Перейти в сообщество</a>
       </div>
       <div class="social-card telegram fade-in">
         <div class="social-icon"><i class="fab fa-telegram-plane"></i></div>
@@ -620,7 +620,7 @@ ANIMATIONS
         </div>
         <div class="contact-item">
           <div class="contact-icon"><i class="fab fa-vk"></i></div>
-          <div class="contact-text"><strong>Сообщество ВКонтакте</strong><a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer">vk.com/ai.content.expert</a></div>
+          <div class="contact-text"><strong>Сообщество ВКонтакте</strong><a href="https://vk.com/ushakova_ai" target="_blank" rel="noopener noreferrer">vk.com/ushakova_ai</a></div>
         </div>
         <div class="contact-item">
           <div class="contact-icon"><i class="fas fa-envelope"></i></div>
@@ -666,7 +666,7 @@ ANIMATIONS
       <a href="#about">Обо мне</a>
       <a href="#contacts">Контакты</a>
       <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer">Telegram</a>
-      <a href="https://vk.com/ai.content.expert" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+      <a href="https://vk.com/ushakova_ai" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
     </div>
     <p class="footer-copy">© <span id="currentYear">2024</span> Дарьяна Ушакова. Все права защищены.<br>Промпт-инженер & Веб-кодер</p>
   </div>
