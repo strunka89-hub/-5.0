@@ -25,4 +25,5 @@ html = html.replace(
 );
 
 fs.writeFileSync(join(__dirname, 'site-standalone.html'), html, 'utf8');
-console.log('OK: site-standalone.html');
+fs.writeFileSync(join(__dirname, 'index.html'), html, 'utf8');
+console.log('OK: site-standalone.html, index.html');
