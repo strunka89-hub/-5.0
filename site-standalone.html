@@ -1,0 +1,2841 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Дарьяна Ушакова - Промпт-инженер и веб-кодер. Помогаю говорить с нейросетями так, чтобы они стали соавторами">
+<title>Дарьяна Ушакова | Промпт-инженер & Веб-кодер</title>
+
+<!-- Канонический адрес: перед публикацией замените https://example.com на ваш домен (везде одинаково). Превью соцсетей: hero-image.png, портрет в Schema — about-photo.png -->
+<!-- ✨ Микроразметка Schema.org для SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Дарьяна Ушакова",
+  "jobTitle": "Промпт-инженер & Веб-кодер",
+  "url": "https://example.com/",
+  "image": "https://example.com/about-photo.png",
+  "email": "strunka89@yandex.ru",
+  "sameAs": [
+    "https://t.me/UshakovaDariana",
+    "https://vk.com/ushakova_ai"
+  ],
+  "knowsAbout": ["Prompt Engineering", "Web Development", "AI Automation", "No-Code"]
+}
+</script>
+
+<!-- ✨ Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:title" content="Дарьяна Ушакова | Промпт-инженер & Веб-кодер">
+<meta property="og:description" content="Помогаю говорить с нейросетями так, чтобы они стали соавторами. Автоматизирую рутину → освобождаю время для жизни">
+<meta property="og:image" content="https://example.com/hero-image.png">
+<meta property="og:image:alt" content="Первый экран сайта: профессиональный образ и цифровые технологии">
+<meta property="og:locale" content="ru_RU">
+
+<!-- ✨ Twitter Card -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://example.com/">
+<meta property="twitter:title" content="Дарьяна Ушакова | Промпт-инженер & Веб-кодер">
+<meta property="twitter:description" content="Помогаю говорить с нейросетями так, чтобы они стали соавторами">
+<meta property="twitter:image" content="https://example.com/hero-image.png">
+<meta name="twitter:image:alt" content="Первый экран сайта: профессиональный образ и цифровые технологии">
+
+<!-- ✨ Preload критического изображения -->
+<link rel="preload" as="image" href="hero-image.png">
+
+<!-- Fonts: preconnect + неблокирующая загрузка CSS шрифтов (media=print → all после onload; display=swap в URL) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"></noscript>
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ============================================
+CSS VARIABLES & RESET — editorial / warm tech
+============================================ */
+:root {
+  --deep-blue: #152a45;
+  --deep-blue-light: #2a4a6e;
+  --purple: #5c4a5f;
+  --purple-light: #7d6a82;
+  --gray-dark: #3d4556;
+  --gray: #5c6578;
+  --gray-light: #9aa3b2;
+  --beige: #c9b8a0;
+  --beige-light: #e8dcc8;
+  --mint: #5a9b86;
+  --sage: #6d8f4a;
+  --terracotta: #c45c3e;
+  --terracotta-light: #d9785c;
+  --white: #faf8f5;
+  --off-white: #f2efe8;
+  --black: #0c1219;
+  --ink: #1a2230;
+  --accent-glow: rgba(196, 92, 62, 0.35);
+  --font-heading: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Mulish', system-ui, sans-serif;
+  /* единый стиль заголовков */
+  --heading-weight: 600;
+  --heading-letter: 0.03em;
+  --heading-line: 1.2;
+  --section-padding: 72px 0;
+  --container-width: 1160px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --surface-tint: rgba(21, 42, 69, 0.06);
+  --shadow-sm: 0 2px 8px rgba(12, 18, 25, 0.06);
+  --shadow-md: 0 8px 24px rgba(12, 18, 25, 0.1);
+  --shadow-lg: 0 20px 48px rgba(12, 18, 25, 0.14);
+  --shadow-xl: 0 28px 64px rgba(12, 18, 25, 0.18);
+  --transition: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--off-white);
+  overflow-x: hidden;
+  letter-spacing: 0.01em;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  font-style: normal;
+  line-height: var(--heading-line);
+  color: var(--deep-blue);
+  letter-spacing: var(--heading-letter);
+}
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ✨ Доступность фокуса */
+*:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 2px; }
+.btn:focus-visible { outline: 3px solid var(--terracotta); outline-offset: 2px; }
+input:focus-visible, textarea:focus-visible { outline: 3px solid var(--mint); outline-offset: 2px; }
+
+/* ============================================
+UTILITIES
+============================================ */
+.container { max-width: var(--container-width); margin: 0 auto; padding: 0 24px; }
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  font-style: normal;
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(28px, 4.2vw, 42px);
+  margin-bottom: 16px;
+  text-align: center;
+  line-height: 1.15;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.section-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, var(--terracotta), var(--mint));
+  border-radius: 2px;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--gray);
+  text-align: center;
+  max-width: 34em;
+  margin: 0 auto 44px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  text-align: center;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--terracotta) 0%, #b84a2e 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px var(--accent-glow), var(--shadow-sm);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px var(--accent-glow), var(--shadow-md);
+}
+.btn-secondary {
+  background: var(--white);
+  color: var(--deep-blue);
+  border: 2px solid var(--deep-blue);
+}
+.btn-secondary:hover {
+  background: var(--deep-blue);
+  color: var(--white);
+}
+.hero .btn-secondary--on-dark {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+.hero .btn-secondary--on-dark:hover {
+  background: var(--white);
+  color: var(--deep-blue);
+  border-color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn-telegram { background: #24A1DE; color: var(--white); }
+.btn-telegram:hover { background: #1a91c7; transform: translateY(-2px); }
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+.btn-block-spaced { margin-top: 20px; }
+.btn-on-dark {
+  background: var(--white);
+  color: var(--deep-blue);
+}
+.btn-on-dark:hover {
+  background: var(--off-white);
+  color: var(--deep-blue);
+  transform: translateY(-2px);
+}
+.btn-vk-brand {
+  background: #0077FF;
+  color: var(--white);
+  border: none;
+}
+.btn-vk-brand:hover {
+  background: #0066dd;
+  color: var(--white);
+}
+
+/* ============================================
+NAVIGATION
+============================================ */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(250, 248, 245, 0.82);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  border-bottom: 1px solid rgba(21, 42, 69, 0.08);
+  box-shadow: none;
+  z-index: 1000;
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.navbar.scrolled {
+  background: rgba(250, 248, 245, 0.94);
+  border-bottom-color: rgba(21, 42, 69, 0.1);
+  box-shadow: var(--shadow-sm);
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+.logo {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  font-size: 1.5rem;
+  color: var(--deep-blue);
+  letter-spacing: var(--heading-letter);
+}
+.logo span { color: var(--terracotta); }
+.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+.nav-links a { font-weight: 500; color: var(--gray-dark); position: relative; }
+.nav-links a:hover { color: var(--terracotta); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 2px; background: var(--terracotta); transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.nav-link--active {
+  color: var(--terracotta);
+  font-weight: 600;
+}
+.nav-links a.nav-link--active::after {
+  width: 100%;
+}
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.lang-switch {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  padding: 9px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid rgba(21, 42, 69, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--deep-blue);
+  transition: var(--transition);
+}
+.lang-switch:hover {
+  background: var(--deep-blue);
+  color: var(--white);
+  border-color: var(--deep-blue);
+}
+.mobile-menu-btn {
+  display: none; background: none; border: none;
+  font-size: 24px; cursor: pointer; color: var(--deep-blue);
+}
+
+/* Прогресс чтения страницы */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  max-width: 100%;
+  z-index: 1001;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--terracotta), var(--mint));
+  transform-origin: left center;
+}
+
+/* ============================================
+HERO SECTION
+============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  background: var(--deep-blue);
+  overflow: hidden;
+  padding-top: 88px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 15% 20%, rgba(196, 92, 62, 0.22) 0%, transparent 50%),
+    radial-gradient(ellipse 90% 70% at 85% 75%, rgba(90, 155, 134, 0.14) 0%, transparent 45%),
+    linear-gradient(118deg, rgba(8, 14, 22, 0.88) 0%, rgba(21, 42, 69, 0.78) 42%, rgba(26, 52, 78, 0.65) 100%);
+  z-index: 1;
+}
+/* лёгкая зернистость — атмосфера без тяжёлых картинок */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.055;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('hero-image.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.42;
+  transform: scale(1.02);
+}
+.hero-magic-rings {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hero-magic-rings canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  max-width: 38rem;
+  padding-bottom: 2rem;
+}
+/* заголовок hero: структура и текст не меняем — только визуал */
+.hero h1 {
+  font-size: clamp(2.25rem, 5.5vw, 3.5rem);
+  margin-bottom: 1.25rem;
+  color: #fff;
+  font-weight: var(--heading-weight);
+  line-height: 1.12;
+  letter-spacing: var(--heading-letter);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+/* вторая строка — роль «Промпт-инженер» */
+.hero-heading .hero-title-line:nth-of-type(2) {
+  display: inline-block;
+  margin-top: 0.1em;
+}
+.hero-title-line--accent {
+  display: inline-block;
+  margin-top: 0.12em;
+  color: #ebe3d7;
+  font-weight: var(--heading-weight);
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.35);
+}
+.hero-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  margin-bottom: 0.85rem;
+  color: rgba(255, 255, 255, 0.93);
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 32em;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.3);
+}
+.hero-text {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.65;
+  font-weight: 500;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.25);
+}
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hero-content > .hero-subtitle {
+  animation: heroReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.hero-content > .hero-text {
+  animation: heroReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+}
+.hero-content > .hero-cta {
+  animation: heroReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.44s both;
+}
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.75);
+  animation: bounce 2.2s ease-in-out infinite;
+  z-index: 2;
+  font-size: 1.1rem;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-10px); }
+  60% { transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ============================================
+SERVICES SECTION
+============================================ */
+.services {
+  padding: var(--section-padding);
+  background: linear-gradient(180deg, #fff 0%, var(--off-white) 100%);
+}
+.services .container > .section-title:first-of-type { margin-top: 0; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  gap: 26px;
+  align-items: stretch;
+}
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 26px 22px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(21, 42, 69, 0.09);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--terracotta), var(--mint));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(196, 92, 62, 0.2);
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-icon {
+  font-size: 1.35rem; margin-bottom: 12px; color: var(--terracotta); line-height: 1;
+}
+.service-icon i { display: block; }
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(17px, 2.2vw, 20px);
+  margin-bottom: 10px;
+  color: var(--deep-blue);
+  line-height: 1.28;
+}
+.service-card p { color: var(--gray); margin-bottom: 12px; line-height: 1.55; font-size: 15px; }
+.service-text-stack { margin-bottom: 0; flex: 1 1 auto; }
+.service-card .service-text-stack > p:not(.service-block-title) { margin-bottom: 8px; }
+.service-block-title {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--deep-blue-light);
+  margin-bottom: 4px;
+  margin-top: 12px;
+  line-height: 1.25;
+}
+.service-card .service-text-stack > .service-block-title:first-child { margin-top: 0; }
+.service-features { list-style: none; margin-bottom: 12px; }
+.service-features li {
+  padding: 4px 0; padding-left: 20px; position: relative; color: var(--gray-dark);
+  font-size: 14px; line-height: 1.45;
+}
+.service-features li::before { content: '✓'; position: absolute; left: 0; color: var(--mint); font-weight: bold; font-size: 0.85em; }
+.service-features--dash li { padding-left: 18px; }
+.service-features--dash li::before {
+  content: '—';
+  color: var(--gray);
+  font-weight: 400;
+  font-size: 1em;
+}
+.service-result {
+  background: var(--surface-tint); padding: 10px 12px; border-radius: 8px;
+  margin-bottom: 14px; font-weight: 600; color: var(--deep-blue); text-align: center;
+  font-size: 14px; border: 1px solid rgba(160, 174, 192, 0.25);
+}
+.service-result--multiline { white-space: pre-line; text-align: left; line-height: 1.5; }
+.service-price { font-size: 20px; font-weight: 700; color: var(--terracotta); margin-bottom: 14px; text-align: center; margin-top: auto; }
+
+/* ============================================
+CALCULATOR SECTION
+============================================ */
+.calculator {
+  padding: var(--section-padding);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(90, 155, 134, 0.08) 0%, transparent 55%),
+    var(--off-white);
+}
+.calculator-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(21, 42, 69, 0.08);
+}
+.calc-step { margin-bottom: 30px; }
+.calc-question {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  letter-spacing: var(--heading-letter);
+  line-height: var(--heading-line);
+  margin-bottom: 20px;
+  color: var(--deep-blue);
+}
+.calc-options { display: flex; flex-direction: column; gap: 12px; }
+.calc-option {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--off-white);
+  border: 2px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.calc-option:hover {
+  border-color: rgba(196, 92, 62, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: var(--shadow-sm);
+}
+.calc-option input[type="radio"] { margin-right: 15px; width: 20px; height: 20px; accent-color: var(--terracotta); }
+.calc-option label { cursor: pointer; font-size: 16px; flex: 1; }
+.calc-result {
+  background: linear-gradient(180deg, var(--deep-blue) 0%, #172d4a 100%);
+  color: var(--white); padding: 32px 28px; border-radius: 12px;
+  text-align: center; margin-top: 32px; display: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.calc-result.active { display: block; animation: fadeIn 0.5s; }
+.calc-result-heading {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  font-style: normal;
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  line-height: var(--heading-line);
+  margin-bottom: 12px;
+  color: var(--white);
+}
+.calc-result-heading__icon { opacity: 0.85; font-size: 1.1em; }
+.calc-result-hint {
+  margin-bottom: 22px; opacity: 0.92; line-height: 1.5; font-size: 15px;
+  display: flex; align-items: flex-start; justify-content: center; gap: 10px; text-align: left;
+  max-width: 26em; margin-left: auto; margin-right: auto;
+}
+.calc-result-hint__icon { margin-top: 3px; flex-shrink: 0; opacity: 0.9; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.calc-price {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 16px 0;
+}
+.calc-timeline {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* ============================================
+ABOUT SECTION
+============================================ */
+.about {
+  padding: var(--section-padding);
+  background: var(--white);
+  position: relative;
+}
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: 52px;
+  align-items: start;
+}
+.about-image {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+.about-image::before {
+  content: '';
+  position: absolute;
+  inset: -10px -10px auto auto;
+  width: 55%;
+  height: 55%;
+  border: 2px solid rgba(196, 92, 62, 0.25);
+  border-radius: var(--radius-md);
+  z-index: 0;
+  pointer-events: none;
+}
+.about-image img {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+}
+.about-hobbies {
+  position: static;
+  margin-top: 16px;
+  background: var(--off-white); padding: 14px 16px; border-radius: 12px;
+  box-shadow: none; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  border: 1px solid rgba(160, 174, 192, 0.3);
+}
+.hobby-item { text-align: center; font-size: 11px; color: var(--gray-dark); line-height: 1.3; max-width: 72px; }
+.hobby-icon { font-size: 1.1rem; display: block; margin-bottom: 6px; color: var(--terracotta); }
+.hobby-icon i { display: inline-block; }
+.about-content h2 {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(24px, 4vw, 32px);
+  margin-bottom: 20px;
+  color: var(--deep-blue);
+  line-height: 1.22;
+}
+.about-content h3.about-lead {
+  margin: 30px 0 20px;
+  color: var(--deep-blue);
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(1.35rem, 2.8vw, 1.65rem);
+  line-height: var(--heading-line);
+}
+.about-content p { margin-bottom: 16px; color: var(--gray); line-height: 1.65; font-size: 15px; }
+.about-list { list-style: none; margin: 22px 0; }
+.about-list li { padding: 8px 0; padding-left: 28px; position: relative; font-size: 15px; line-height: 1.55; }
+.about-list li::before { content: '✓'; position: absolute; left: 0; color: var(--sage); font-weight: bold; font-size: 16px; }
+.about-mission {
+  background: var(--surface-tint); padding: 20px 22px; border-radius: 12px;
+  margin-top: 24px; border-left: 3px solid var(--terracotta);
+}
+.about-mission h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter);
+  color: var(--deep-blue);
+  margin-bottom: 15px;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  line-height: var(--heading-line);
+}
+
+/* ============================================
+SOCIAL MEDIA SECTION
+============================================ */
+.social {
+  padding: var(--section-padding);
+  background:
+    radial-gradient(ellipse 100% 80% at 100% 0%, rgba(196, 92, 62, 0.15) 0%, transparent 45%),
+    radial-gradient(ellipse 70% 60% at 0% 100%, rgba(90, 155, 134, 0.12) 0%, transparent 40%),
+    linear-gradient(165deg, #122338 0%, var(--deep-blue) 45%, #0f1f32 100%);
+  color: var(--white);
+}
+.social .section-title,
+.social .section-subtitle {
+  color: var(--white);
+}
+.social .section-title::after {
+  background: linear-gradient(90deg, rgba(232, 220, 200, 0.85), var(--mint));
+}
+.social .section-subtitle { opacity: 0.9; }
+.social-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; max-width: 900px; margin: 0 auto; }
+.social-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.social-card:hover {
+  transform: translateY(-2px); background: rgba(255, 255, 255, 0.12); box-shadow: var(--shadow-md);
+}
+.social-card.vk { border-color: #0077FF; }
+.social-card.telegram { border-color: #24A1DE; }
+.social-icon { font-size: 40px; margin-bottom: 14px; }
+.social-card.vk .social-icon { color: #0077FF; }
+.social-card.telegram .social-icon { color: #24A1DE; }
+.social-card h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter);
+  color: var(--white);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: var(--heading-line);
+  margin-bottom: 10px;
+}
+.social-card p { opacity: 0.88; margin-bottom: 18px; line-height: 1.6; font-size: 15px; }
+.social-features { list-style: none; margin-bottom: 25px; }
+.social-features li { padding: 8px 0; padding-left: 25px; position: relative; }
+.social-features li::before { content: '•'; position: absolute; left: 0; color: var(--beige); }
+.social-note {
+  text-align: center; margin-top: 36px; font-size: 16px; opacity: 0.88;
+  max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.55;
+}
+
+/* ============================================
+CONTACTS SECTION
+============================================ */
+.contacts {
+  padding: var(--section-padding);
+  background: linear-gradient(180deg, var(--off-white) 0%, #ebe6dc 100%);
+}
+.contacts-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1000px; margin: 0 auto; }
+.contacts-info h3 {
+  font-family: var(--font-heading);
+  font-weight: var(--heading-weight);
+  letter-spacing: var(--heading-letter);
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  line-height: var(--heading-line);
+  margin-bottom: 30px;
+}
+.contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+.contact-icon { font-size: 24px; color: var(--terracotta); width: 30px; }
+.contact-text strong { display: block; color: var(--deep-blue); margin-bottom: 5px; }
+.contact-text a { color: var(--deep-blue-light); text-decoration: underline; text-underline-offset: 2px; }
+.contact-text a:hover { color: var(--terracotta); }
+.contact-meta {
+  margin-top: 40px; padding: 25px; background: var(--white);
+  border-radius: 12px; box-shadow: var(--shadow-sm);
+}
+.contact-form {
+  background: var(--white);
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(21, 42, 69, 0.08);
+}
+.form-group { margin-bottom: 25px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--deep-blue); }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid rgba(21, 42, 69, 0.12);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 16px;
+  transition: var(--transition);
+  background: rgba(250, 248, 245, 0.5);
+}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--mint); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-privacy { font-size: 14px; color: var(--gray); margin-top: 20px; text-align: center; }
+.form-success {
+  display: none; background: var(--mint); color: var(--white);
+  padding: 20px; border-radius: 8px; text-align: center; margin-top: 20px;
+}
+.form-success.active { display: block; animation: fadeIn 0.5s; }
+
+/* ============================================
+FOOTER
+============================================ */
+.footer {
+  background: linear-gradient(180deg, #0f1f32 0%, var(--deep-blue) 100%);
+  color: var(--white);
+  padding: 48px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.footer-content { max-width: var(--container-width); margin: 0 auto; padding: 0 20px; }
+.footer-links { display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap; }
+.footer-links a { color: var(--beige); transition: var(--transition); }
+.footer-links a:hover { color: var(--white); }
+.footer-copy { opacity: 0.8; font-size: 14px; }
+
+/* ============================================
+RESPONSIVE DESIGN
+============================================ */
+@media (max-width: 968px) {
+  .about-container, .contacts-container { grid-template-columns: 1fr; }
+  .social-grid { grid-template-columns: 1fr; }
+  .about-image { max-width: 420px; margin: 0 auto; }
+  .about-image::before { display: none; }
+}
+@media (max-width: 768px) {
+  .navbar-container { position: relative; flex-wrap: wrap; }
+  .logo { order: 1; }
+  .navbar-actions {
+    order: 2;
+    margin-left: auto;
+  }
+  .nav-links {
+    display: none;
+    order: 3;
+    flex-basis: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 8px 20px 20px;
+    background: rgba(250, 248, 245, 0.97);
+    backdrop-filter: blur(14px);
+    box-shadow: var(--shadow-md);
+    list-style: none;
+  }
+  .navbar.nav-open .nav-links { display: flex; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(160, 174, 192, 0.35);
+  }
+  .nav-links li:last-child a { border-bottom: none; }
+  .nav-links a::after { display: none; }
+  .mobile-menu-btn { display: block; }
+  .hero-cta { flex-direction: column; }
+  .calculator-container { padding: 30px 20px; }
+  .service-card { padding: 22px 18px; }
+  .contacts-container { gap: 40px; }
+  .contact-form { padding: 30px 20px; }
+}
+@media (max-width: 480px) {
+  :root { --section-padding: 60px 0; }
+  .hero h1 { font-size: 28px; }
+  .section-title { font-size: 24px; }
+}
+
+/* ============================================
+ANIMATIONS
+============================================ */
+.fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Каскад появления карточек услуг */
+.services-grid > .service-card.fade-in:nth-child(1) { transition-delay: 0s; }
+.services-grid > .service-card.fade-in:nth-child(2) { transition-delay: 0.09s; }
+.services-grid > .service-card.fade-in:nth-child(3) { transition-delay: 0.18s; }
+.services-grid > .service-card.fade-in:nth-child(4) { transition-delay: 0.27s; }
+
+/* ============================================
+ДОСТУПНОСТЬ: уменьшенное движение
+============================================ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-magic-rings {
+    display: none !important;
+  }
+  html { scroll-behavior: auto; }
+  .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .services-grid > .service-card.fade-in {
+    transition-delay: 0s !important;
+  }
+  .hero-content > .hero-subtitle,
+  .hero-content > .hero-text,
+  .hero-content > .hero-cta {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .scroll-indicator {
+    animation: none;
+  }
+  .calc-result.active {
+    animation: none;
+  }
+}
+
+.target-cursor-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 10050;
+  mix-blend-mode: difference;
+}
+
+.target-cursor-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+}
+
+.target-cursor-corner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border: 3px solid #fff;
+  will-change: transform;
+}
+
+.corner-tl {
+  transform: translate(-150%, -150%);
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-tr {
+  transform: translate(50%, -150%);
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-br {
+  transform: translate(50%, 50%);
+  border-left: none;
+  border-top: none;
+}
+
+.corner-bl {
+  transform: translate(-150%, 50%);
+  border-right: none;
+  border-top: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .target-cursor-wrapper {
+    display: none !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-container">
+    <a href="#" class="logo">Дарьяна<span>.Ушакова</span></a>
+    <ul class="nav-links">
+      <li><a href="#services" data-i18n="nav.services">Услуги</a></li>
+      <li><a href="#calculator" data-i18n="nav.calculator">Калькулятор</a></li>
+      <li><a href="#about" data-i18n="nav.about">Обо мне</a></li>
+      <li><a href="#social" data-i18n="nav.social">Контент</a></li>
+      <li><a href="#contacts" data-i18n="nav.contacts">Контакты</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button type="button" class="lang-switch" id="langSwitch" aria-label="Переключить на английский">EN</button>
+      <button type="button" class="mobile-menu-btn" aria-label="Открыть меню" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div id="heroMagicRings" class="hero-magic-rings" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-heading" id="heroHeading">
+        <span class="hero-title-line" data-i18n="hero.titleLine1">Дарьяна Ушакова |</span><br>
+        <span class="hero-title-line" data-i18n="hero.titleLine2">Промпт-инженер</span><br>
+        <span class="hero-title-line hero-title-line--accent" data-i18n="hero.titleLine3">&amp; Веб-кодер</span>
+      </h1>
+      <p class="hero-subtitle" data-i18n="hero.subtitle">Помогаю говорить с нейросетями так, чтобы они стали соавторами</p>
+      <p class="hero-text" data-i18n="hero.text">Автоматизирую рутину → освобождаю время для жизни</p>
+      <div class="hero-cta">
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fab fa-telegram-plane"></i> <span data-i18n="hero.cta1">Напишите — разберём вашу задачу</span>
+        </a>
+        <a href="#services" class="btn btn-secondary btn-secondary--on-dark" data-i18n="hero.cta2">Узнать больше</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="services.title">Услуги, которые освободят ваше время</h2>
+    <p class="section-subtitle fade-in" data-i18n="services.subtitle">Без сложных терминов. Без «волшебных таблеток». Только работающие решения.</p>
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-bullseye"></i></div>
+        <h3 data-i18n="s1.title">ИИ, который начинает работать в вашем бизнесе</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s1.forWhoLabel">Для кого:</p>
+          <p data-i18n="s1.forWhoText">Если вы пробовали ИИ, но не получили результата</p>
+          <p class="service-block-title" data-i18n="s1.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s1.whatIDoText">Разбираю вашу задачу и создаю систему промптов под ваш бизнес (не шаблоны из интернета)</p>
+          <p class="service-block-title" data-i18n="s1.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s1.f1">готовые промпты под ваши задачи</li>
+            <li data-i18n="s1.f2">инструкции «как использовать»</li>
+            <li data-i18n="s1.f3">примеры под вашу нишу</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s1.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s1.result">👉 экономия 5–10 часов в неделю
+👉 контент и тексты без «затыка»</div>
+        </div>
+        <div class="service-price" data-i18n="s1.price">от 5 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s1.btn">Обсудить задачу</a>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+        <h3 data-i18n="s2.title">Сайт, который приносит заявки, а не просто «есть»</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s2.forWhoLabel">Для кого:</p>
+          <p data-i18n="s2.forWhoText">Если у вас нет сайта или он не даёт клиентов</p>
+          <p class="service-block-title" data-i18n="s2.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s2.whatIDoText">Анализирую ваш бизнес → собираю структуру → создаю сайт под заявки</p>
+          <p class="service-block-title" data-i18n="s2.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s2.f1">понятную структуру под вашу ЦА</li>
+            <li data-i18n="s2.f2">тексты, которые продают</li>
+            <li data-i18n="s2.f3">адаптацию под телефон</li>
+            <li data-i18n="s2.f4">готовую форму заявок</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s2.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s2.result">👉 сайт, который объясняет за вас и приводит клиентов
+👉 запуск за 5–7 дней без хаоса</div>
+        </div>
+        <div class="service-price" data-i18n="s2.price">от 25 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s2.btn">Хочу сайт</a>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-rocket"></i></div>
+        <h3 data-i18n="s3.title">Навожу порядок в бизнесе через ИИ (под ключ)</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s3.forWhoLabel">Для кого:</p>
+          <p data-i18n="s3.forWhoText">Если у вас хаос, рутина и нет времени на развитие</p>
+          <p class="service-block-title" data-i18n="s3.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s3.whatIDoText">Разбираю ваш бизнес по косточкам → нахожу, где теряете время → внедряю ИИ</p>
+          <p class="service-block-title" data-i18n="s3.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s3.f1">аудит процессов</li>
+            <li data-i18n="s3.f2">понятный план внедрения</li>
+            <li data-i18n="s3.f3">настроенные инструменты</li>
+            <li data-i18n="s3.f4">обучение + поддержка</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s3.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s3.result">👉 экономия 10–15 часов в неделю
+👉 система вместо хаоса
+👉 рост эффективности</div>
+        </div>
+        <div class="service-price" data-i18n="s3.price">от 50 000 ₽</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s3.btn">Разобрать мой бизнес</a>
+      </div>
+      <!-- Service 4 -->
+      <div class="service-card fade-in">
+        <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
+        <h3 data-i18n="s4.title">Научу работать с ИИ без страха и перегруза</h3>
+        <div class="service-text-stack">
+          <p class="service-block-title" data-i18n="s4.forWhoLabel">Для кого:</p>
+          <p data-i18n="s4.forWhoText">Если хотите сами использовать ИИ, но не понимаете как</p>
+          <p class="service-block-title" data-i18n="s4.whatIDoLabel">Что я делаю:</p>
+          <p data-i18n="s4.whatIDoText">Объясняю простым языком, показываю на ваших задачах</p>
+          <p class="service-block-title" data-i18n="s4.whatYouGetLabel">Что получите:</p>
+          <ul class="service-features service-features--dash">
+            <li data-i18n="s4.f1">понимание, как работать с ИИ</li>
+            <li data-i18n="s4.f2">готовые шаблоны</li>
+            <li data-i18n="s4.f3">ответы на ваши вопросы</li>
+          </ul>
+          <p class="service-block-title" data-i18n="s4.resultLabel">Результат:</p>
+          <div class="service-result service-result--multiline" data-i18n="s4.result">👉 уверенность в работе с ИИ
+👉 делаете задачи быстрее без помощи специалистов</div>
+        </div>
+        <div class="service-price" data-i18n="s4.price">от 3 000 ₽/час</div>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="s4.btn">Записаться на обучение</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR SECTION -->
+<section class="calculator" id="calculator">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="calc.title">Рассчитайте стоимость вашего проекта</h2>
+    <div class="calculator-container fade-in">
+      <form id="calcForm">
+        <div class="calc-step">
+          <div class="calc-question" data-i18n="calc.q1">1. Что вам нужно?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="service" id="service1" value="prompts"><label for="service1" data-i18n="calc.s1">Промпты для ИИ</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service2" value="website"><label for="service2" data-i18n="calc.s2">Сайт/лендинг</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service3" value="complex"><label for="service3" data-i18n="calc.s3">Комплексное внедрение</label></div>
+            <div class="calc-option"><input type="radio" name="service" id="service4" value="training"><label for="service4" data-i18n="calc.s4">Обучение</label></div>
+          </div>
+        </div>
+        <div class="calc-step">
+          <div class="calc-question" data-i18n="calc.q2">2. Какой у вас бизнес?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="business" id="biz1" value="expert"><label for="biz1" data-i18n="calc.b1">Эксперт/фрилансер</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz2" value="small"><label for="biz2" data-i18n="calc.b2">Малый бизнес</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz3" value="school"><label for="biz3" data-i18n="calc.b3">Онлайн-школа</label></div>
+            <div class="calc-option"><input type="radio" name="business" id="biz4" value="other"><label for="biz4" data-i18n="calc.b4">Другое</label></div>
+          </div>
+        </div>
+        <div class="calc-step">
+          <div class="calc-question" data-i18n="calc.q3">3. Срочность?</div>
+          <div class="calc-options">
+            <div class="calc-option"><input type="radio" name="urgency" id="urg1" value="normal"><label for="urg1" data-i18n="calc.u1">Не горит</label></div>
+            <div class="calc-option"><input type="radio" name="urgency" id="urg2" value="two-weeks"><label for="urg2" data-i18n="calc.u2">За 2 недели</label></div>
+            <div class="calc-option"><input type="radio" name="urgency" id="urg3" value="urgent"><label for="urg3" data-i18n="calc.u3">Нужно вчера 😅</label></div>
+          </div>
+        </div>
+        <button type="button" id="calcSubmitBtn" class="btn btn-primary btn-block btn-block-spaced" data-i18n="calc.submit">Рассчитать стоимость</button>
+      </form>
+      <div class="calc-result" id="calcResult">
+        <h3 class="calc-result-heading"><i class="fa-solid fa-chart-simple calc-result-heading__icon" aria-hidden="true"></i> <span data-i18n="calc.resultTitle">Предварительная стоимость</span></h3>
+        <div class="calc-price" id="calcPrice">от 5 000 ₽</div>
+        <div class="calc-timeline" id="calcTimeline">Срок: 3-5 дней</div>
+        <p class="calc-result-hint"><i class="fa-regular fa-lightbulb calc-result-hint__icon" aria-hidden="true"></i> <span data-i18n="calc.hint">Давайте обсудим детали в личном Telegram?</span></p>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-on-dark">
+          <i class="fab fa-telegram-plane"></i> <span data-i18n="calc.tgBtn">Написать Дарьяне в Telegram</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-container">
+      <div class="about-image fade-in">
+        <img src="about-photo.png" alt="Дарьяна Ушакова" data-i18n-alt="img.alt" loading="lazy" width="600" height="900">
+        <div class="about-hobbies">
+          <div class="hobby-item"><span class="hobby-icon" aria-hidden="true"><i class="fa-solid fa-scissors"></i></span><span data-i18n="about.hobby1">Макраме</span></div>
+          <div class="hobby-item"><span class="hobby-icon" aria-hidden="true"><i class="fa-solid fa-plane-up"></i></span><span data-i18n="about.hobby2">Путешествия</span></div>
+          <div class="hobby-item"><span class="hobby-icon" aria-hidden="true"><i class="fa-solid fa-people-roof"></i></span><span data-i18n="about.hobby3">Мама</span></div>
+        </div>
+      </div>
+      <div class="about-content fade-in">
+        <h2 data-i18n="about.h2">Не технарь с рождения, а живой человек, который нашёл свой путь</h2>
+        <p><strong data-i18n="about.p1">Привет! Я Дарьяна.</strong></p>
+        <p data-i18n="about.p2">По образованию экономист-бухгалтер (ни дня не работала по профессии 😅). Много путешествовала, открыла детский сад, воспитываю двух дочек (15 и 5 лет), люблю плести макраме.</p>
+        <p data-i18n="about.p3">А потом случайно наткнулась на нейросети...</p>
+        <p data-i18n="about.p4">Сначала использовала ИИ, чтобы улучшать фото своих работ по макраме. Потом прошла курс — и понеслось! Теперь не могу остановиться.</p>
+        <h3 class="about-lead" data-i18n="about.h3">Почему я?</h3>
+        <ul class="about-list">
+          <li data-i18n="about.li1">Я не «технарь с рождения» — я помню, каково это, когда ничего не понятно</li>
+          <li data-i18n="about.li2">Объясняю сложное на мемах и аналогиях из жизни</li>
+          <li data-i18n="about.li3">Сначала вникаю в ваш бизнес, потом предлагаю решения</li>
+          <li data-i18n="about.li4">Не обещаю «миллионы за неделю» — показываю реальные результаты</li>
+        </ul>
+        <div class="about-mission">
+          <h4 data-i18n="about.mh">Моя миссия:</h4>
+          <p data-i18n="about.mp">Показать, что ИИ — это не замена человека, а помощник, который превращает рутинный хаос в работающие решения. И освобождает время для жизни.</p>
+        </div>
+        <p style="margin-top: 20px; font-style: italic; color: var(--purple);" data-i18n="about.ps">P.S. Когда не пишу промпты, плету макраме и планирую путешествия с семьёй 🧶️</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA SECTION -->
+<section class="social" id="social">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="social.title">Следите за моими проектами ВКонтакте</h2>
+    <p class="section-subtitle fade-in" data-i18n="social.subtitle">Я только начинаю свой путь в промпт-инжиниринге, поэтому мои первые кейсы появляются прямо сейчас. Присоединяйтесь — будем расти вместе!</p>
+    <div class="social-grid">
+      <div class="social-card vk fade-in">
+        <div class="social-icon"><i class="fab fa-vk"></i></div>
+        <h3 data-i18n="social.vkH">ВКонтакте: vk.com/ushakova_ai</h3>
+        <p data-i18n="social.vkP">Что там:</p>
+        <ul class="social-features">
+          <li data-i18n="social.vk1">Промпт-подарки каждую неделю</li>
+          <li data-i18n="social.vk2">Разборы страхов об ИИ («Без паники»)</li>
+          <li data-i18n="social.vk3">Как я использую ИИ в макраме и жизни</li>
+          <li data-i18n="social.vk4">Полезные гайды и инструкции</li>
+          <li data-i18n="social.vk5">Мои первые кейсы в реальном времени</li>
+        </ul>
+        <a href="https://vk.com/ushakova_ai" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-vk-brand" data-i18n="social.vkBtn">Перейти в сообщество</a>
+      </div>
+      <div class="social-card telegram fade-in">
+        <div class="social-icon"><i class="fab fa-telegram-plane"></i></div>
+        <h3 data-i18n="social.tgH">Личный Telegram: @UshakovaDariana</h3>
+        <p data-i18n="social.tgP">Для чего:</p>
+        <ul class="social-features">
+          <li data-i18n="social.tg1">Написать мне напрямую</li>
+          <li data-i18n="social.tg2">Обсудить вашу задачу</li>
+          <li data-i18n="social.tg3">Задать вопрос после прочтения поста</li>
+          <li data-i18n="social.tg4">Договориться о консультации</li>
+        </ul>
+        <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-block" data-i18n="social.tgBtn">Написать Дарьяне</a>
+      </div>
+    </div>
+    <p class="social-note fade-in" data-i18n="social.note">«Я честно делюсь своим путём: что получается, а что нет. Без «успешного успеха» и прикрас. Подписывайтесь на сообщество ВКонтакте, а если есть вопрос — пишите в личный Telegram. Отвечу по-человечески 🤝»</p>
+  </div>
+</section>
+
+<!-- CONTACTS SECTION -->
+<section class="contacts" id="contacts">
+  <div class="container">
+    <h2 class="section-title fade-in" data-i18n="contacts.title">Давайте обсудим вашу задачу</h2>
+    <p class="section-subtitle fade-in" data-i18n="contacts.subtitle">Напишите — я отвечу в течение дня. Без навязчивых продаж, по-человечески.</p>
+    <div class="contacts-container">
+      <div class="contacts-info fade-in">
+        <h3 data-i18n="contacts.h3">Контактная информация</h3>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-telegram-plane"></i></div>
+          <div class="contact-text"><strong data-i18n="contacts.tg">Личный Telegram</strong><a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer">@UshakovaDariana</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-vk"></i></div>
+          <div class="contact-text"><strong data-i18n="contacts.vk">Сообщество ВКонтакте</strong><a href="https://vk.com/ushakova_ai" target="_blank" rel="noopener noreferrer">vk.com/ushakova_ai</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-text"><strong data-i18n="contacts.email">Email</strong><a href="mailto:strunka89@yandex.ru">strunka89@yandex.ru</a></div>
+        </div>
+        <div class="contact-meta">
+          <p><strong data-i18n="contacts.meta1">🕐 Отвечаю:</strong> <span data-i18n="contacts.meta1b">в течение рабочего дня</span></p>
+          <p><strong data-i18n="contacts.meta2">💬 Формат:</strong> <span data-i18n="contacts.meta2b">сначала выслушаю, потом предложу решение</span></p>
+        </div>
+      </div>
+      <div class="contact-form fade-in">
+        <form id="contactForm" action="#" method="post">
+          <div class="form-group">
+            <label for="name" data-i18n="form.name">Ваше имя</label>
+            <input type="text" id="name" name="name" required data-i18n-placeholder="form.namePh" placeholder="Как к вам обращаться?">
+          </div>
+          <div class="form-group">
+            <label for="contact" data-i18n="form.contact">Ваш email или контакт для связи</label>
+            <input type="text" id="contact" name="contact" required data-i18n-placeholder="form.contactPh" placeholder="Telegram, email или телефон">
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="form.msg">Что нужно сделать?</label>
+            <textarea id="message" name="message" required data-i18n-placeholder="form.msgPh" placeholder="Расскажите о вашей задаче..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" data-i18n="form.submit">Отправить</button>
+          <p class="form-privacy" data-i18n="form.privacy">Я не спамлю, честно. Ваши данные не передаю третьим лицам.</p>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-check-circle" style="font-size: 48px; margin-bottom: 15px;"></i>
+            <p data-i18n="form.success">Спасибо! Я получила ваше сообщение и отвечу вам в ближайшее время.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#calculator" data-i18n="nav.calculator">Калькулятор</a>
+      <a href="#about" data-i18n="nav.about">Обо мне</a>
+      <a href="#contacts" data-i18n="nav.contacts">Контакты</a>
+      <a href="https://t.me/UshakovaDariana" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <a href="https://vk.com/ushakova_ai" target="_blank" rel="noopener noreferrer" data-i18n="footer.vk">ВКонтакте</a>
+    </div>
+    <p class="footer-copy"><span id="footerCopyLine" data-i18n="footer.copy">© {{YEAR}} Дарьяна Ушакова. Все права защищены.</span><br><span data-i18n="footer.tagline">Промпт-инженер & Веб-кодер</span></p>
+  </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
+<script>
+/* Словарь интерфейса: подключается перед script.js */
+(function () {
+  'use strict';
+
+  var SITE_I18N = {
+    ru: {
+      'meta.title': 'Дарьяна Ушакова | Промпт-инженер & Веб-кодер',
+      'lang.switchToEn': 'EN',
+      'lang.switchToRu': 'RU',
+      'lang.ariaToEn': 'Переключить на английский',
+      'lang.ariaToRu': 'Переключить на русский',
+      'nav.menuOpen': 'Открыть меню',
+      'nav.menuClose': 'Закрыть меню',
+      'nav.services': 'Услуги',
+      'nav.calculator': 'Калькулятор',
+      'nav.about': 'Обо мне',
+      'nav.social': 'Контент',
+      'nav.contacts': 'Контакты',
+      'hero.titleLine1': 'Дарьяна Ушакова |',
+      'hero.titleLine2': 'Промпт-инженер',
+      'hero.titleLine3': '& Веб-кодер',
+      'hero.subtitle': 'Помогаю говорить с нейросетями так, чтобы они стали соавторами',
+      'hero.text': 'Автоматизирую рутину → освобождаю время для жизни',
+      'hero.cta1': 'Напишите — разберём вашу задачу',
+      'hero.cta2': 'Узнать больше',
+      'services.title': 'Услуги, которые освободят ваше время',
+      'services.subtitle': 'Без сложных терминов. Без «волшебных таблеток». Только работающие решения.',
+      's1.title': 'ИИ, который начинает работать в вашем бизнесе',
+      's1.forWhoLabel': 'Для кого:',
+      's1.forWhoText': 'Если вы пробовали ИИ, но не получили результата',
+      's1.whatIDoLabel': 'Что я делаю:',
+      's1.whatIDoText': 'Разбираю вашу задачу и создаю систему промптов под ваш бизнес (не шаблоны из интернета)',
+      's1.whatYouGetLabel': 'Что получите:',
+      's1.f1': 'готовые промпты под ваши задачи',
+      's1.f2': 'инструкции «как использовать»',
+      's1.f3': 'примеры под вашу нишу',
+      's1.resultLabel': 'Результат:',
+      's1.result': '👉 экономия 5–10 часов в неделю\n👉 контент и тексты без «затыка»',
+      's1.price': 'от 5 000 ₽',
+      's1.btn': 'Обсудить задачу',
+      's2.title': 'Сайт, который приносит заявки, а не просто «есть»',
+      's2.forWhoLabel': 'Для кого:',
+      's2.forWhoText': 'Если у вас нет сайта или он не даёт клиентов',
+      's2.whatIDoLabel': 'Что я делаю:',
+      's2.whatIDoText': 'Анализирую ваш бизнес → собираю структуру → создаю сайт под заявки',
+      's2.whatYouGetLabel': 'Что получите:',
+      's2.f1': 'понятную структуру под вашу ЦА',
+      's2.f2': 'тексты, которые продают',
+      's2.f3': 'адаптацию под телефон',
+      's2.f4': 'готовую форму заявок',
+      's2.resultLabel': 'Результат:',
+      's2.result': '👉 сайт, который объясняет за вас и приводит клиентов\n👉 запуск за 5–7 дней без хаоса',
+      's2.price': 'от 25 000 ₽',
+      's2.btn': 'Хочу сайт',
+      's3.title': 'Навожу порядок в бизнесе через ИИ (под ключ)',
+      's3.forWhoLabel': 'Для кого:',
+      's3.forWhoText': 'Если у вас хаос, рутина и нет времени на развитие',
+      's3.whatIDoLabel': 'Что я делаю:',
+      's3.whatIDoText': 'Разбираю ваш бизнес по косточкам → нахожу, где теряете время → внедряю ИИ',
+      's3.whatYouGetLabel': 'Что получите:',
+      's3.f1': 'аудит процессов',
+      's3.f2': 'понятный план внедрения',
+      's3.f3': 'настроенные инструменты',
+      's3.f4': 'обучение + поддержка',
+      's3.resultLabel': 'Результат:',
+      's3.result': '👉 экономия 10–15 часов в неделю\n👉 система вместо хаоса\n👉 рост эффективности',
+      's3.price': 'от 50 000 ₽',
+      's3.btn': 'Разобрать мой бизнес',
+      's4.title': 'Научу работать с ИИ без страха и перегруза',
+      's4.forWhoLabel': 'Для кого:',
+      's4.forWhoText': 'Если хотите сами использовать ИИ, но не понимаете как',
+      's4.whatIDoLabel': 'Что я делаю:',
+      's4.whatIDoText': 'Объясняю простым языком, показываю на ваших задачах',
+      's4.whatYouGetLabel': 'Что получите:',
+      's4.f1': 'понимание, как работать с ИИ',
+      's4.f2': 'готовые шаблоны',
+      's4.f3': 'ответы на ваши вопросы',
+      's4.resultLabel': 'Результат:',
+      's4.result': '👉 уверенность в работе с ИИ\n👉 делаете задачи быстрее без помощи специалистов',
+      's4.price': 'от 3 000 ₽/час',
+      's4.btn': 'Записаться на обучение',
+      'calc.title': 'Рассчитайте стоимость вашего проекта',
+      'calc.q1': '1. Что вам нужно?',
+      'calc.q2': '2. Какой у вас бизнес?',
+      'calc.q3': '3. Срочность?',
+      'calc.s1': 'Промпты для ИИ',
+      'calc.s2': 'Сайт/лендинг',
+      'calc.s3': 'Комплексное внедрение',
+      'calc.s4': 'Обучение',
+      'calc.b1': 'Эксперт/фрилансер',
+      'calc.b2': 'Малый бизнес',
+      'calc.b3': 'Онлайн-школа',
+      'calc.b4': 'Другое',
+      'calc.u1': 'Не горит',
+      'calc.u2': 'За 2 недели',
+      'calc.u3': 'Нужно вчера 😅',
+      'calc.submit': 'Рассчитать стоимость',
+      'calc.alert': 'Пожалуйста, ответьте на все вопросы',
+      'calc.from': 'от',
+      'calc.timeline': 'Срок:',
+      'calc.resultTitle': 'Предварительная стоимость',
+      'calc.hint': 'Давайте обсудим детали в личном Telegram?',
+      'calc.tgBtn': 'Написать Дарьяне в Telegram',
+      'about.hobby1': 'Макраме',
+      'about.hobby2': 'Путешествия',
+      'about.hobby3': 'Мама',
+      'about.h2': 'Не технарь с рождения, а живой человек, который нашёл свой путь',
+      'about.p1': 'Привет! Я Дарьяна.',
+      'about.p2': 'По образованию экономист-бухгалтер (ни дня не работала по профессии 😅). Много путешествовала, открыла детский сад, воспитываю двух дочек (15 и 5 лет), люблю плести макраме.',
+      'about.p3': 'А потом случайно наткнулась на нейросети...',
+      'about.p4': 'Сначала использовала ИИ, чтобы улучшать фото своих работ по макраме. Потом прошла курс — и понеслось! Теперь не могу остановиться.',
+      'about.h3': 'Почему я?',
+      'about.li1': 'Я не «технарь с рождения» — я помню, каково это, когда ничего не понятно',
+      'about.li2': 'Объясняю сложное на мемах и аналогиях из жизни',
+      'about.li3': 'Сначала вникаю в ваш бизнес, потом предлагаю решения',
+      'about.li4': 'Не обещаю «миллионы за неделю» — показываю реальные результаты',
+      'about.mh': 'Моя миссия:',
+      'about.mp': 'Показать, что ИИ — это не замена человека, а помощник, который превращает рутинный хаос в работающие решения. И освобождает время для жизни.',
+      'about.ps': 'P.S. Когда не пишу промпты, плету макраме и планирую путешествия с семьёй 🧶️',
+      'social.title': 'Следите за моими проектами ВКонтакте',
+      'social.subtitle': 'Я только начинаю свой путь в промпт-инжиниринге, поэтому мои первые кейсы появляются прямо сейчас. Присоединяйтесь — будем расти вместе!',
+      'social.vkH': 'ВКонтакте: vk.com/ushakova_ai',
+      'social.vkP': 'Что там:',
+      'social.vk1': 'Промпт-подарки каждую неделю',
+      'social.vk2': 'Разборы страхов об ИИ («Без паники»)',
+      'social.vk3': 'Как я использую ИИ в макраме и жизни',
+      'social.vk4': 'Полезные гайды и инструкции',
+      'social.vk5': 'Мои первые кейсы в реальном времени',
+      'social.vkBtn': 'Перейти в сообщество',
+      'social.tgH': 'Личный Telegram: @UshakovaDariana',
+      'social.tgP': 'Для чего:',
+      'social.tg1': 'Написать мне напрямую',
+      'social.tg2': 'Обсудить вашу задачу',
+      'social.tg3': 'Задать вопрос после прочтения поста',
+      'social.tg4': 'Договориться о консультации',
+      'social.tgBtn': 'Написать Дарьяне',
+      'social.note': '«Я честно делюсь своим путём: что получается, а что нет. Без «успешного успеха» и прикрас. Подписывайтесь на сообщество ВКонтакте, а если есть вопрос — пишите в личный Telegram. Отвечу по-человечески 🤝»',
+      'contacts.title': 'Давайте обсудим вашу задачу',
+      'contacts.subtitle': 'Напишите — я отвечу в течение дня. Без навязчивых продаж, по-человечески.',
+      'contacts.h3': 'Контактная информация',
+      'contacts.tg': 'Личный Telegram',
+      'contacts.vk': 'Сообщество ВКонтакте',
+      'contacts.email': 'Email',
+      'contacts.meta1': '🕐 Отвечаю:',
+      'contacts.meta1b': 'в течение рабочего дня',
+      'contacts.meta2': '💬 Формат:',
+      'contacts.meta2b': 'сначала выслушаю, потом предложу решение',
+      'form.name': 'Ваше имя',
+      'form.namePh': 'Как к вам обращаться?',
+      'form.contact': 'Ваш email или контакт для связи',
+      'form.contactPh': 'Telegram, email или телефон',
+      'form.msg': 'Что нужно сделать?',
+      'form.msgPh': 'Расскажите о вашей задаче...',
+      'form.submit': 'Отправить',
+      'form.privacy': 'Я не спамлю, честно. Ваши данные не передаю третьим лицам.',
+      'form.success': 'Спасибо! Я получила ваше сообщение и отвечу вам в ближайшее время.',
+      'form.sending': 'Отправка...',
+      'form.confirmMailto': 'Не удалось отправить через сайт (часто так бывает при открытии файла с диска). Открыть письмо в почте?',
+      'form.fallback': 'Напишите мне в Telegram: @UshakovaDariana или на почту ',
+      'form.mailSubj': 'Сообщение с сайта: ',
+      'form.mailName': 'Имя: ',
+      'form.mailContact': 'Контакт: ',
+      'form.mailNoName': 'без имени',
+      'footer.vk': 'ВКонтакте',
+      'footer.copy': '© {{YEAR}} Дарьяна Ушакова. Все права защищены.',
+      'footer.tagline': 'Промпт-инженер & Веб-кодер',
+      'img.alt': 'Дарьяна Ушакова'
+    },
+    en: {
+      'meta.title': 'Dariana Ushakova | Prompt Engineer & Web Developer',
+      'lang.switchToEn': 'EN',
+      'lang.switchToRu': 'RU',
+      'lang.ariaToEn': 'Switch to English',
+      'lang.ariaToRu': 'Switch to Russian',
+      'nav.menuOpen': 'Open menu',
+      'nav.menuClose': 'Close menu',
+      'nav.services': 'Services',
+      'nav.calculator': 'Calculator',
+      'nav.about': 'About',
+      'nav.social': 'Content',
+      'nav.contacts': 'Contact',
+      'hero.titleLine1': 'Dariana Ushakova |',
+      'hero.titleLine2': 'Prompt Engineer',
+      'hero.titleLine3': '& Web Developer',
+      'hero.subtitle': 'I help you talk to AI so it becomes your co-creator',
+      'hero.text': 'I automate the routine → so you have time to live',
+      'hero.cta1': 'Message me — let’s unpack your task',
+      'hero.cta2': 'Learn more',
+      'services.title': 'Services that free up your time',
+      'services.subtitle': 'No jargon. No magic pills. Just solutions that work.',
+      's1.title': 'AI that starts working in your business',
+      's1.forWhoLabel': 'Who it’s for:',
+      's1.forWhoText': 'You’ve tried AI but didn’t get real results',
+      's1.whatIDoLabel': 'What I do:',
+      's1.whatIDoText': 'I unpack your task and build a prompt system for your business — not generic web templates',
+      's1.whatYouGetLabel': 'What you get:',
+      's1.f1': 'ready-made prompts for your tasks',
+      's1.f2': 'how-to guides',
+      's1.f3': 'examples tailored to your niche',
+      's1.resultLabel': 'Outcome:',
+      's1.result': '👉 save 5–10 hours a week\n👉 content and copy without writer’s block',
+      's1.price': 'from 5,000 ₽',
+      's1.btn': 'Discuss your task',
+      's2.title': 'A site that brings leads — not just «we exist online»',
+      's2.forWhoLabel': 'Who it’s for:',
+      's2.forWhoText': 'You don’t have a site yet, or it isn’t bringing clients',
+      's2.whatIDoLabel': 'What I do:',
+      's2.whatIDoText': 'I analyze your business → shape the structure → build a lead-focused site',
+      's2.whatYouGetLabel': 'What you get:',
+      's2.f1': 'clear structure for your target audience',
+      's2.f2': 'copy that sells',
+      's2.f3': 'mobile-friendly layout',
+      's2.f4': 'a ready lead form',
+      's2.resultLabel': 'Outcome:',
+      's2.result': '👉 a site that explains for you and brings in clients\n👉 launch in 5–7 days without chaos',
+      's2.price': 'from 25,000 ₽',
+      's2.btn': 'I want a site',
+      's3.title': 'I bring order to your business with AI (done-for-you)',
+      's3.forWhoLabel': 'Who it’s for:',
+      's3.forWhoText': 'Chaos, routine, and no time left to grow the business',
+      's3.whatIDoLabel': 'What I do:',
+      's3.whatIDoText': 'I break down your business → find where you lose time → implement AI',
+      's3.whatYouGetLabel': 'What you get:',
+      's3.f1': 'process audit',
+      's3.f2': 'a clear rollout plan',
+      's3.f3': 'tools set up and configured',
+      's3.f4': 'training + support',
+      's3.resultLabel': 'Outcome:',
+      's3.result': '👉 save 10–15 hours a week\n👉 a system instead of chaos\n👉 higher efficiency',
+      's3.price': 'from 50,000 ₽',
+      's3.btn': 'Review my business',
+      's4.title': 'Learn to use AI without fear or overwhelm',
+      's4.forWhoLabel': 'Who it’s for:',
+      's4.forWhoText': 'You want to use AI yourself but aren’t sure how',
+      's4.whatIDoLabel': 'What I do:',
+      's4.whatIDoText': 'Plain-language walkthroughs on your real tasks',
+      's4.whatYouGetLabel': 'What you get:',
+      's4.f1': 'clarity on how to work with AI',
+      's4.f2': 'ready-made templates',
+      's4.f3': 'answers to your questions',
+      's4.resultLabel': 'Outcome:',
+      's4.result': '👉 confidence working with AI\n👉 you finish tasks faster without hiring a specialist',
+      's4.price': 'from 3,000 ₽/hour',
+      's4.btn': 'Book training',
+      'calc.title': 'Estimate your project cost',
+      'calc.q1': '1. What do you need?',
+      'calc.q2': '2. What’s your business?',
+      'calc.q3': '3. How urgent?',
+      'calc.s1': 'AI prompts',
+      'calc.s2': 'Site / landing',
+      'calc.s3': 'Full implementation',
+      'calc.s4': 'Training',
+      'calc.b1': 'Expert / freelancer',
+      'calc.b2': 'Small business',
+      'calc.b3': 'Online school',
+      'calc.b4': 'Other',
+      'calc.u1': 'No rush',
+      'calc.u2': 'Within 2 weeks',
+      'calc.u3': 'Yesterday 😅',
+      'calc.submit': 'Calculate estimate',
+      'calc.alert': 'Please answer all questions',
+      'calc.from': 'from',
+      'calc.timeline': 'Timeline:',
+      'calc.resultTitle': 'Estimated budget',
+      'calc.hint': 'Want to discuss details in Telegram?',
+      'calc.tgBtn': 'Message Dariana on Telegram',
+      'about.hobby1': 'Macramé',
+      'about.hobby2': 'Travel',
+      'about.hobby3': 'Mom',
+      'about.h2': 'Not a born techie — a real person who found her path',
+      'about.p1': 'Hi! I’m Dariana.',
+      'about.p2': 'Trained as an economist-accountant (never worked a day in that field 😅). I’ve travelled a lot, opened a kindergarten, raise two daughters (15 and 5), and love macramé.',
+      'about.p3': 'Then I stumbled into neural networks…',
+      'about.p4': 'First I used AI to improve photos of my macramé. Then I took a course — and I was hooked. I haven’t stopped since.',
+      'about.h3': 'Why me?',
+      'about.li1': 'I wasn’t “born technical” — I remember when nothing made sense',
+      'about.li2': 'I explain hard things with memes and everyday analogies',
+      'about.li3': 'I learn your business first, then suggest solutions',
+      'about.li4': 'No “millions in a week” — I show real outcomes',
+      'about.mh': 'My mission:',
+      'about.mp': 'Show that AI isn’t a replacement for people, but a helper that turns routine chaos into working solutions — and frees time for life.',
+      'about.ps': 'P.S. When I’m not writing prompts, I’m knotting macramé or planning trips with my family 🧶️',
+      'social.title': 'Follow my projects on VK',
+      'social.subtitle': 'I’m early in my prompt-engineering journey — my first case studies are appearing now. Join me and let’s grow together!',
+      'social.vkH': 'VK: vk.com/ushakova_ai',
+      'social.vkP': 'What’s there:',
+      'social.vk1': 'Weekly prompt freebies',
+      'social.vk2': 'Fear-busting posts about AI (“No panic”)',
+      'social.vk3': 'How I use AI in macramé and daily life',
+      'social.vk4': 'Useful guides',
+      'social.vk5': 'My first live case studies',
+      'social.vkBtn': 'Join the community',
+      'social.tgH': 'Personal Telegram: @UshakovaDariana',
+      'social.tgP': 'Use it to:',
+      'social.tg1': 'Message me directly',
+      'social.tg2': 'Discuss your task',
+      'social.tg3': 'Ask after reading a post',
+      'social.tg4': 'Book a consultation',
+      'social.tgBtn': 'Message Dariana',
+      'social.note': '“I share my path honestly: what works and what doesn’t. No fake success stories. Subscribe on VK; if you have a question, DM me on Telegram — I’ll answer like a human 🤝”',
+      'contacts.title': 'Let’s talk about your task',
+      'contacts.subtitle': 'Write to me — I’ll reply within a day. No pushy sales, just a human conversation.',
+      'contacts.h3': 'Contact details',
+      'contacts.tg': 'Personal Telegram',
+      'contacts.vk': 'VK community',
+      'contacts.email': 'Email',
+      'contacts.meta1': '🕐 I reply:',
+      'contacts.meta1b': 'within one business day',
+      'contacts.meta2': '💬 Format:',
+      'contacts.meta2b': 'I listen first, then suggest next steps',
+      'form.name': 'Your name',
+      'form.namePh': 'How should I address you?',
+      'form.contact': 'Email or how to reach you',
+      'form.contactPh': 'Telegram, email, or phone',
+      'form.msg': 'What do you need?',
+      'form.msgPh': 'Tell me about your task…',
+      'form.submit': 'Send',
+      'form.privacy': 'No spam — I don’t share your data with third parties.',
+      'form.success': 'Thank you! I’ve received your message and will reply soon.',
+      'form.sending': 'Sending…',
+      'form.confirmMailto': 'Couldn’t send via the site (common when opening the file locally). Open your email app?',
+      'form.fallback': 'Reach me on Telegram: @UshakovaDariana or at ',
+      'form.mailSubj': 'Message from website: ',
+      'form.mailName': 'Name: ',
+      'form.mailContact': 'Contact: ',
+      'form.mailNoName': 'no name',
+      'footer.vk': 'VK',
+      'footer.copy': '© {{YEAR}} Dariana Ushakova. All rights reserved.',
+      'footer.tagline': 'Prompt Engineer & Web Developer',
+      'img.alt': 'Dariana Ushakova'
+    }
+  };
+
+  var CALC_TIMELINES = {
+    ru: {
+      prompts: '3-5 дней',
+      website: '5-7 дней',
+      complex: '2-3 недели',
+      training: '1-2 часа'
+    },
+    en: {
+      prompts: '3–5 days',
+      website: '5–7 days',
+      complex: '2–3 weeks',
+      training: '1–2 hours'
+    }
+  };
+
+  window.SITE_I18N = SITE_I18N;
+  window.SITE_CALC_TIMELINES = CALC_TIMELINES;
+})();
+
+</script>
+<script>
+/* global SITE_I18N, SITE_CALC_TIMELINES, gsap */
+
+var LANG_STORAGE_KEY = 'siteLang';
+var NAV_SECTION_IDS = ['services', 'calculator', 'about', 'social', 'contacts'];
+var calcPriceAnimGen = 0;
+var heroTitleTween = null;
+
+/** Полное имя заголовка для aria-label (читалка не зачитывает по буквам из .hero-char) */
+function updateHeroHeadingAriaLabel() {
+  var h1 = document.querySelector('.hero-heading');
+  if (!h1) return;
+  var line1 = h1.querySelector('[data-i18n="hero.titleLine1"]');
+  var line2 = h1.querySelector('[data-i18n="hero.titleLine2"]');
+  var line3 = h1.querySelector('[data-i18n="hero.titleLine3"]');
+  if (!line1 || !line2 || !line3) return;
+  var t1 = (line1.textContent || '').replace(/\s+/g, ' ').trim();
+  var t2 = (line2.textContent || '').replace(/\s+/g, ' ').trim();
+  var t3 = (line3.textContent || '').replace(/\s+/g, ' ').trim();
+  h1.setAttribute('aria-label', t1 + ' ' + t2 + ' ' + t3);
+}
+
+/** Анимация появления по буквам (аналог React SplitText + GSAP без платного плагина) */
+function initHeroTitleAnimation() {
+  var h1 = document.querySelector('.hero-heading');
+  if (!h1 || typeof gsap === 'undefined') return;
+
+  updateHeroHeadingAriaLabel();
+
+  var lines = h1.querySelectorAll('.hero-title-line');
+  if (!lines.length) return;
+
+  if (prefersReducedMotion()) return;
+
+  var oldChars = h1.querySelectorAll('.hero-char');
+  if (oldChars.length) gsap.killTweensOf(oldChars);
+  if (heroTitleTween) {
+    heroTitleTween.kill();
+    heroTitleTween = null;
+  }
+
+  lines.forEach(function(line) {
+    var text = line.textContent;
+    line.textContent = '';
+    for (var i = 0; i < text.length; i++) {
+      var ch = text.charAt(i);
+      var span = document.createElement('span');
+      span.className = 'hero-char';
+      span.setAttribute('aria-hidden', 'true');
+      span.textContent = ch === ' ' ? '\u00A0' : ch;
+      line.appendChild(span);
+    }
+  });
+
+  var chars = h1.querySelectorAll('.hero-char');
+  if (!chars.length) return;
+
+  gsap.set(chars, { opacity: 0, y: 40, force3D: true });
+  heroTitleTween = gsap.to(chars, {
+    opacity: 1,
+    y: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    stagger: 0.11,
+    overwrite: 'auto',
+    onComplete: function() {
+      heroTitleTween = null;
+    }
+  });
+}
+
+function scheduleHeroTitleAnimation() {
+  function run() {
+    requestAnimationFrame(initHeroTitleAnimation);
+  }
+  if (typeof document.fonts !== 'undefined' && document.fonts.ready) {
+    document.fonts.ready.then(run);
+  } else {
+    run();
+  }
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function animateCalcPrice(el, finalAmount, loc, prefix) {
+  if (!el) return;
+  if (prefersReducedMotion()) {
+    el.textContent = prefix + ' ' + finalAmount.toLocaleString(loc) + ' ₽';
+    return;
+  }
+  calcPriceAnimGen += 1;
+  var gen = calcPriceAnimGen;
+  var start = performance.now();
+  var duration = 680;
+  var from = 0;
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+  function tick(now) {
+    if (gen !== calcPriceAnimGen) return;
+    var t = Math.min(1, (now - start) / duration);
+    var eased = easeOutCubic(t);
+    var current = from + (finalAmount - from) * eased;
+    el.textContent = prefix + ' ' + Math.round(current).toLocaleString(loc) + ' ₽';
+    if (t < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = prefix + ' ' + finalAmount.toLocaleString(loc) + ' ₽';
+    }
+  }
+  requestAnimationFrame(tick);
+}
+
+function getSiteLocale() {
+  try {
+    var saved = localStorage.getItem(LANG_STORAGE_KEY);
+    if (saved === 'en' || saved === 'ru') return saved;
+  } catch (e) { /* private mode */ }
+  return 'ru';
+}
+
+function t(key) {
+  var lang = getSiteLocale();
+  var pack = window.SITE_I18N && window.SITE_I18N[lang];
+  var ru = window.SITE_I18N && window.SITE_I18N.ru;
+  if (pack && pack[key] !== undefined) return pack[key];
+  if (ru && ru[key] !== undefined) return ru[key];
+  return key;
+}
+
+function applySiteLocale(lang) {
+  if (lang !== 'en' && lang !== 'ru') return;
+  try {
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
+  } catch (e) { /* ignore */ }
+  document.documentElement.lang = lang;
+
+  var year = new Date().getFullYear();
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (!key || !window.SITE_I18N || !window.SITE_I18N[lang]) return;
+    var tx = window.SITE_I18N[lang][key];
+    if (tx === undefined) return;
+    el.textContent = key === 'footer.copy' ? tx.replace(/\{\{YEAR\}\}/g, String(year)) : tx;
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-placeholder');
+    if (key && window.SITE_I18N[lang] && window.SITE_I18N[lang][key] !== undefined) {
+      el.placeholder = window.SITE_I18N[lang][key];
+    }
+  });
+
+  document.querySelectorAll('[data-i18n-alt]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n-alt');
+    if (key && window.SITE_I18N[lang] && window.SITE_I18N[lang][key] !== undefined) {
+      el.alt = window.SITE_I18N[lang][key];
+    }
+  });
+
+  document.title = window.SITE_I18N[lang]['meta.title'] || document.title;
+  updateLangSwitchButton();
+  updateMobileMenuButtonAria();
+  resetCalcResultDisplay();
+  var sub = document.querySelector('#contactForm button[type="submit"]');
+  if (sub && !sub.disabled) sub.textContent = t('form.submit');
+
+  updateHeroHeadingAriaLabel();
+  scheduleHeroTitleAnimation();
+}
+
+function resetCalcResultDisplay() {
+  calcPriceAnimGen += 1;
+  var res = document.getElementById('calcResult');
+  if (res && res.classList.contains('active')) res.classList.remove('active');
+  var lang = getSiteLocale();
+  var loc = lang === 'en' ? 'en-US' : 'ru-RU';
+  var priceEl = document.getElementById('calcPrice');
+  var tlEl = document.getElementById('calcTimeline');
+  if (priceEl) {
+    priceEl.textContent = t('calc.from') + ' ' + (5000).toLocaleString(loc) + ' ₽';
+  }
+  if (tlEl && window.SITE_CALC_TIMELINES && window.SITE_CALC_TIMELINES[lang]) {
+    tlEl.textContent = t('calc.timeline') + ' ' + window.SITE_CALC_TIMELINES[lang].prompts;
+  }
+}
+
+function updateLangSwitchButton() {
+  var btn = document.getElementById('langSwitch');
+  if (!btn) return;
+  var lang = getSiteLocale();
+  if (lang === 'ru') {
+    btn.textContent = window.SITE_I18N.ru['lang.switchToEn'];
+    btn.setAttribute('aria-label', window.SITE_I18N.ru['lang.ariaToEn']);
+  } else {
+    btn.textContent = window.SITE_I18N.en['lang.switchToRu'];
+    btn.setAttribute('aria-label', window.SITE_I18N.en['lang.ariaToRu']);
+  }
+}
+
+function updateMobileMenuButtonAria() {
+  var menuBtn = document.querySelector('.mobile-menu-btn');
+  if (!menuBtn) return;
+  var open = menuBtn.getAttribute('aria-expanded') === 'true';
+  menuBtn.setAttribute('aria-label', open ? t('nav.menuClose') : t('nav.menuOpen'));
+}
+
+function initLangSwitch() {
+  var btn = document.getElementById('langSwitch');
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    applySiteLocale(getSiteLocale() === 'ru' ? 'en' : 'ru');
+  });
+}
+
+// NAVBAR SCROLL EFFECT
+function initNavbarScroll() {
+  const navbar = document.getElementById('navbar');
+  if (!navbar) return;
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+}
+
+// MOBILE MENU (класс на <nav>, без inline style)
+function toggleMobileMenu() {
+  const navbar = document.getElementById('navbar');
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  if (!navbar || !menuBtn) return;
+  const willOpen = !navbar.classList.contains('nav-open');
+  navbar.classList.toggle('nav-open');
+  menuBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+  updateMobileMenuButtonAria();
+  if (willOpen) {
+    const firstLink = navbar.querySelector('.nav-links a');
+    if (firstLink) requestAnimationFrame(function() { firstLink.focus(); });
+  } else {
+    menuBtn.focus();
+  }
+}
+
+function closeMobileMenu() {
+  const navbar = document.getElementById('navbar');
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  if (!navbar || !navbar.classList.contains('nav-open')) return;
+  navbar.classList.remove('nav-open');
+  if (menuBtn) {
+    menuBtn.setAttribute('aria-expanded', 'false');
+    updateMobileMenuButtonAria();
+    menuBtn.focus();
+  }
+}
+
+/** Элементы с клавиатурной фокусировкой внутри контейнера (видимые на экране) */
+function getVisibleFocusables(container) {
+  const candidates = container.querySelectorAll(
+    'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+  return Array.prototype.filter.call(candidates, function(el) {
+    if (el.getAttribute('tabindex') === '-1') return false;
+    const style = window.getComputedStyle(el);
+    if (style.visibility === 'hidden' || style.display === 'none') return false;
+    return el.offsetParent !== null;
+  });
+}
+
+/** Escape, Tab-ловушка в шапке при открытом мобильном меню, возврат фокуса внутрь при «утечке» */
+function initMobileMenuA11y() {
+  document.addEventListener('keydown', function(e) {
+    const navbar = document.getElementById('navbar');
+    if (!navbar || !navbar.classList.contains('nav-open')) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      closeMobileMenu();
+      return;
+    }
+
+    if (e.key !== 'Tab') return;
+
+    const list = getVisibleFocusables(navbar);
+    if (list.length === 0) return;
+
+    const first = list[0];
+    const last = list[list.length - 1];
+    const active = document.activeElement;
+
+    if (e.shiftKey) {
+      if (active === first || !navbar.contains(active)) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else if (active === last || !navbar.contains(active)) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  document.addEventListener('focusin', function() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar || !navbar.classList.contains('nav-open')) return;
+    requestAnimationFrame(function() {
+      if (!navbar.classList.contains('nav-open')) return;
+      const active = document.activeElement;
+      if (navbar.contains(active)) return;
+      const list = getVisibleFocusables(navbar);
+      if (list.length > 0) list[0].focus();
+    });
+  });
+}
+
+// CALCULATOR
+function calculatePrice() {
+  const service = document.querySelector('input[name="service"]:checked');
+  const business = document.querySelector('input[name="business"]:checked');
+  const urgency = document.querySelector('input[name="urgency"]:checked');
+
+  if (!service || !business || !urgency) {
+    alert(t('calc.alert'));
+    return;
+  }
+
+  const lang = getSiteLocale();
+  const loc = lang === 'en' ? 'en-US' : 'ru-RU';
+  const timelines = window.SITE_CALC_TIMELINES[lang];
+
+  const prices = {
+    prompts: { base: 5000 },
+    website: { base: 25000 },
+    complex: { base: 50000 },
+    training: { base: 3000 }
+  };
+  const urgencyMultipliers = { normal: 1, 'two-weeks': 1.2, urgent: 1.5 };
+  const businessAdjustments = { expert: 0, small: 5000, school: 10000, other: 0 };
+
+  const basePrice = prices[service.value].base;
+  const multiplier = urgencyMultipliers[urgency.value];
+  const adjustment = businessAdjustments[business.value];
+  const finalPrice = basePrice * multiplier + adjustment;
+
+  document.getElementById('calcTimeline').textContent =
+    t('calc.timeline') + ' ' + timelines[service.value];
+  var calcResultEl = document.getElementById('calcResult');
+  calcResultEl.classList.add('active');
+  animateCalcPrice(document.getElementById('calcPrice'), finalPrice, loc, t('calc.from'));
+  calcResultEl.scrollIntoView({
+    behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+    block: 'nearest'
+  });
+}
+
+// CONTACT FORM
+// Замените YOUR_FORMSPREE_ID на реальный ID с https://formspree.io — тогда письма будут уходить с сервера (удобно на хостинге).
+// Пока стоит заглушка или страница открыта как file://, используется mailto (откроется почтовый клиент).
+const FORMSPREE_FORM_ID = 'YOUR_FORMSPREE_ID';
+const CONTACT_EMAIL = 'strunka89@yandex.ru';
+
+function openMailtoWithForm() {
+  const name = document.getElementById('name').value.trim();
+  const contact = document.getElementById('contact').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const subject = encodeURIComponent(t('form.mailSubj') + (name || t('form.mailNoName')));
+  const body = encodeURIComponent(
+    t('form.mailName') + name + '\n' +
+    t('form.mailContact') + contact + '\n\n' +
+    message
+  );
+  window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
+}
+
+function submitForm(event) {
+  event.preventDefault();
+  const form = document.getElementById('contactForm');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const formspreeConfigured = FORMSPREE_FORM_ID &&
+    FORMSPREE_FORM_ID !== 'YOUR_FORMSPREE_ID' &&
+    !FORMSPREE_FORM_ID.includes('YOUR_FORMSPREE');
+
+  let isSuccess = false;
+
+  submitBtn.textContent = t('form.sending');
+  submitBtn.disabled = true;
+
+  const formData = {
+    name: document.getElementById('name').value,
+    contact: document.getElementById('contact').value,
+    message: document.getElementById('message').value
+  };
+
+  const finishSuccess = function() {
+    isSuccess = true;
+    document.getElementById('formSuccess').classList.add('active');
+    form.reset();
+  };
+
+  if (!formspreeConfigured) {
+    openMailtoWithForm();
+    finishSuccess();
+    submitBtn.textContent = t('form.submit');
+    submitBtn.disabled = false;
+    setTimeout(function() { document.getElementById('formSuccess').classList.remove('active'); }, 8000);
+    return;
+  }
+
+  fetch('https://formspree.io/f/' + FORMSPREE_FORM_ID, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(formData)
+  })
+    .then(function(response) {
+      if (response.ok) finishSuccess();
+      else throw new Error('Ошибка отправки');
+    })
+    .catch(function(error) {
+      console.error('Error:', error);
+      if (confirm(t('form.confirmMailto'))) {
+        openMailtoWithForm();
+        finishSuccess();
+      } else {
+        alert(t('form.fallback') + CONTACT_EMAIL);
+      }
+    })
+    .finally(function() {
+      submitBtn.textContent = t('form.submit');
+      submitBtn.disabled = false;
+      if (isSuccess) {
+        setTimeout(function() { document.getElementById('formSuccess').classList.remove('active'); }, 5000);
+      }
+    });
+}
+
+function initSmoothScrollAndMenuClose() {
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+        block: 'start'
+      });
+      closeMobileMenu();
+    });
+  });
+}
+
+function initScrollProgressAndNavHighlight() {
+  var bar = document.getElementById('scrollProgress');
+  var nav = document.querySelector('.nav-links');
+  var navbar = document.getElementById('navbar');
+  var links = nav ? nav.querySelectorAll('a[href^="#"]') : [];
+  function clearNavActive() {
+    links.forEach(function(a) {
+      a.classList.remove('nav-link--active');
+      a.removeAttribute('aria-current');
+    });
+  }
+  function update() {
+    if (bar) {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - doc.clientHeight;
+      var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    }
+    if (!nav || links.length === 0) return;
+    clearNavActive();
+    if (window.scrollY < 72) return;
+    var threshold = (navbar ? navbar.offsetHeight : 0) + 40;
+    var pos = window.scrollY + threshold;
+    var currentId = '';
+    NAV_SECTION_IDS.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= pos) currentId = id;
+    });
+    if (!currentId) return;
+    var active = nav.querySelector('a[href="#' + currentId + '"]');
+    if (active) {
+      active.classList.add('nav-link--active');
+      active.setAttribute('aria-current', 'page');
+    }
+  }
+  var ticking = false;
+  function onScrollOrResize() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(function() {
+        ticking = false;
+        update();
+      });
+    }
+  }
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize, { passive: true });
+  update();
+}
+
+function initContactFieldHighlight() {
+  document.querySelectorAll('#contactForm input, #contactForm textarea').forEach(function(input) {
+    input.addEventListener('blur', function() {
+      this.style.borderColor = this.value.trim() !== '' ? 'var(--mint)' : 'var(--gray-light)';
+    });
+  });
+}
+
+function initFadeInObserver() {
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+}
+
+function init() {
+  if (!window.SITE_I18N) return;
+  applySiteLocale(getSiteLocale());
+
+  initNavbarScroll();
+  initLangSwitch();
+
+  const menuBtn = document.querySelector('.mobile-menu-btn');
+  if (menuBtn) menuBtn.addEventListener('click', toggleMobileMenu);
+
+  const calcBtn = document.getElementById('calcSubmitBtn');
+  if (calcBtn) calcBtn.addEventListener('click', calculatePrice);
+
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) contactForm.addEventListener('submit', submitForm);
+
+  initSmoothScrollAndMenuClose();
+
+  window.addEventListener('resize', function() {
+    if (window.matchMedia('(min-width: 769px)').matches) closeMobileMenu();
+  });
+
+  initContactFieldHighlight();
+  initFadeInObserver();
+  initMobileMenuA11y();
+  initScrollProgressAndNavHighlight();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+</script>
+<script>
+/* global THREE */
+/**
+ * MagicRings — vanilla порт @react-bits (Three.js + шейдеры).
+ * Цвета под палитру сайта (терракота / мята).
+ */
+(function () {
+  'use strict';
+
+  function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  var vertexShader = [
+    'void main() {',
+    '  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);',
+    '}'
+  ].join('\n');
+
+  var fragmentShader = [
+    'precision highp float;',
+    '',
+    'uniform float uTime, uAttenuation, uLineThickness;',
+    'uniform float uBaseRadius, uRadiusStep, uScaleRate;',
+    'uniform float uOpacity, uNoiseAmount, uRotation, uRingGap;',
+    'uniform float uFadeIn, uFadeOut;',
+    'uniform float uMouseInfluence, uHoverAmount, uHoverScale, uParallax, uBurst;',
+    'uniform vec2 uResolution, uMouse;',
+    'uniform vec3 uColor, uColorTwo;',
+    'uniform int uRingCount;',
+    '',
+    'const float HP = 1.5707963;',
+    'const float CYCLE = 3.45;',
+    '',
+    'float fade(float t) {',
+    '  return t < uFadeIn ? smoothstep(0.0, uFadeIn, t) : 1.0 - smoothstep(uFadeOut, CYCLE - 0.2, t);',
+    '}',
+    '',
+    'float ring(vec2 p, float ri, float cut, float t0, float px) {',
+    '  float t = mod(uTime + t0, CYCLE);',
+    '  float r = ri + t / CYCLE * uScaleRate;',
+    '  float d = abs(length(p) - r);',
+    '  float a = atan(abs(p.y), abs(p.x)) / HP;',
+    '  float th = max(1.0 - a, 0.5) * px * uLineThickness;',
+    '  float h = (1.0 - smoothstep(th, th * 1.5, d)) + 1.0;',
+    '  d += pow(cut * a, 3.0) * r;',
+    '  return h * exp(-uAttenuation * d) * fade(t);',
+    '}',
+    '',
+    'void main() {',
+    '  float px = 1.0 / min(uResolution.x, uResolution.y);',
+    '  vec2 p = (gl_FragCoord.xy - 0.5 * uResolution.xy) * px;',
+    '  float cr = cos(uRotation), sr = sin(uRotation);',
+    '  p = mat2(cr, -sr, sr, cr) * p;',
+    '  p -= uMouse * uMouseInfluence;',
+    '  float sc = mix(1.0, uHoverScale, uHoverAmount) + uBurst * 0.3;',
+    '  p /= sc;',
+    '  vec3 c = vec3(0.0);',
+    '  float rcf = max(float(uRingCount) - 1.0, 1.0);',
+    '  for (int i = 0; i < 10; i++) {',
+    '    if (i >= uRingCount) break;',
+    '    float fi = float(i);',
+    '    vec2 pr = p - fi * uParallax * uMouse;',
+    '    vec3 rc = mix(uColor, uColorTwo, fi / rcf);',
+    '    c = mix(c, rc, vec3(ring(pr, uBaseRadius + fi * uRadiusStep, pow(uRingGap, fi), i == 0 ? 0.0 : 2.95 * fi, px)));',
+    '  }',
+    '  c *= 1.0 + uBurst * 2.0;',
+    '  float n = fract(sin(dot(gl_FragCoord.xy + uTime * 100.0, vec2(12.9898, 78.233))) * 43758.5453);',
+    '  c += (n - 0.5) * uNoiseAmount;',
+    '  gl_FragColor = vec4(c, max(c.r, max(c.g, c.b)) * uOpacity);',
+    '}'
+  ].join('\n');
+
+  var CONFIG = {
+    color: '#c45c3e',
+    colorTwo: '#5a9b86',
+    ringCount: 6,
+    speed: 1,
+    attenuation: 10,
+    lineThickness: 2,
+    baseRadius: 0.35,
+    radiusStep: 0.1,
+    scaleRate: 0.1,
+    opacity: 0.55,
+    blur: 0,
+    noiseAmount: 0.1,
+    rotation: 0,
+    ringGap: 1.5,
+    fadeIn: 0.7,
+    fadeOut: 0.5,
+    followMouse: false,
+    mouseInfluence: 0.2,
+    hoverScale: 1.2,
+    parallax: 0.05,
+    clickBurst: false
+  };
+
+  function init() {
+    if (prefersReducedMotion()) return;
+    if (typeof THREE === 'undefined') return;
+
+    var mount = document.getElementById('heroMagicRings');
+    if (!mount) return;
+
+    var renderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    } catch (e) {
+      return;
+    }
+
+    if (!renderer.capabilities.isWebGL2) {
+      renderer.dispose();
+      return;
+    }
+
+    renderer.setClearColor(0x000000, 0);
+    mount.appendChild(renderer.domElement);
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0.1, 10);
+    camera.position.z = 1;
+
+    var uniforms = {
+      uTime: { value: 0 },
+      uAttenuation: { value: 0 },
+      uResolution: { value: new THREE.Vector2() },
+      uColor: { value: new THREE.Color() },
+      uColorTwo: { value: new THREE.Color() },
+      uLineThickness: { value: 0 },
+      uBaseRadius: { value: 0 },
+      uRadiusStep: { value: 0 },
+      uScaleRate: { value: 0 },
+      uRingCount: { value: 0 },
+      uOpacity: { value: 1 },
+      uNoiseAmount: { value: 0 },
+      uRotation: { value: 0 },
+      uRingGap: { value: 1.6 },
+      uFadeIn: { value: 0.5 },
+      uFadeOut: { value: 0.75 },
+      uMouse: { value: new THREE.Vector2() },
+      uMouseInfluence: { value: 0 },
+      uHoverAmount: { value: 0 },
+      uHoverScale: { value: 1 },
+      uParallax: { value: 0 },
+      uBurst: { value: 0 }
+    };
+
+    var material = new THREE.ShaderMaterial({
+      vertexShader: vertexShader,
+      fragmentShader: fragmentShader,
+      uniforms: uniforms,
+      transparent: true
+    });
+    var quad = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
+    scene.add(quad);
+
+    var mouseRef = [0, 0];
+    var smoothMouseRef = [0, 0];
+    var hoverAmountRef = 0;
+    var isHoveredRef = false;
+    var burstRef = 0;
+
+    function resize() {
+      var w = mount.clientWidth;
+      var h = mount.clientHeight;
+      if (w < 1 || h < 1) return;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      renderer.setSize(w, h);
+      renderer.setPixelRatio(dpr);
+      uniforms.uResolution.value.set(w * dpr, h * dpr);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    var ro = new ResizeObserver(resize);
+    ro.observe(mount);
+
+    function onMouseMove(e) {
+      var rect = mount.getBoundingClientRect();
+      mouseRef[0] = (e.clientX - rect.left) / rect.width - 0.5;
+      mouseRef[1] = -((e.clientY - rect.top) / rect.height - 0.5);
+    }
+    function onMouseEnter() {
+      isHoveredRef = true;
+    }
+    function onMouseLeave() {
+      isHoveredRef = false;
+      mouseRef[0] = 0;
+      mouseRef[1] = 0;
+    }
+    function onClick() {
+      burstRef = 1;
+    }
+
+    if (CONFIG.followMouse || CONFIG.clickBurst) {
+      mount.addEventListener('mousemove', onMouseMove);
+      mount.addEventListener('mouseenter', onMouseEnter);
+      mount.addEventListener('mouseleave', onMouseLeave);
+      if (CONFIG.clickBurst) mount.addEventListener('click', onClick);
+    }
+
+    if (CONFIG.blur > 0) {
+      mount.style.filter = 'blur(' + CONFIG.blur + 'px)';
+    }
+
+    var frameId;
+    function animate(t) {
+      frameId = requestAnimationFrame(animate);
+
+      smoothMouseRef[0] += (mouseRef[0] - smoothMouseRef[0]) * 0.08;
+      smoothMouseRef[1] += (mouseRef[1] - smoothMouseRef[1]) * 0.08;
+      hoverAmountRef += ((isHoveredRef ? 1 : 0) - hoverAmountRef) * 0.08;
+      burstRef *= 0.95;
+      if (burstRef < 0.001) burstRef = 0;
+
+      uniforms.uTime.value = t * 0.001 * CONFIG.speed;
+      uniforms.uAttenuation.value = CONFIG.attenuation;
+      uniforms.uColor.value.set(CONFIG.color);
+      uniforms.uColorTwo.value.set(CONFIG.colorTwo);
+      uniforms.uLineThickness.value = CONFIG.lineThickness;
+      uniforms.uBaseRadius.value = CONFIG.baseRadius;
+      uniforms.uRadiusStep.value = CONFIG.radiusStep;
+      uniforms.uScaleRate.value = CONFIG.scaleRate;
+      uniforms.uRingCount.value = CONFIG.ringCount;
+      uniforms.uOpacity.value = CONFIG.opacity;
+      uniforms.uNoiseAmount.value = CONFIG.noiseAmount;
+      uniforms.uRotation.value = (CONFIG.rotation * Math.PI) / 180;
+      uniforms.uRingGap.value = CONFIG.ringGap;
+      uniforms.uFadeIn.value = CONFIG.fadeIn;
+      uniforms.uFadeOut.value = CONFIG.fadeOut;
+      uniforms.uMouse.value.set(smoothMouseRef[0], smoothMouseRef[1]);
+      uniforms.uMouseInfluence.value = CONFIG.followMouse ? CONFIG.mouseInfluence : 0;
+      uniforms.uHoverAmount.value = hoverAmountRef;
+      uniforms.uHoverScale.value = CONFIG.hoverScale;
+      uniforms.uParallax.value = CONFIG.parallax;
+      uniforms.uBurst.value = CONFIG.clickBurst ? burstRef : 0;
+
+      renderer.render(scene, camera);
+    }
+    frameId = requestAnimationFrame(animate);
+
+    window.__heroMagicRingsCleanup = function () {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener('resize', resize);
+      ro.disconnect();
+      mount.removeEventListener('mousemove', onMouseMove);
+      mount.removeEventListener('mouseenter', onMouseEnter);
+      mount.removeEventListener('mouseleave', onMouseLeave);
+      mount.removeEventListener('click', onClick);
+      if (renderer.domElement.parentNode === mount) mount.removeChild(renderer.domElement);
+      renderer.dispose();
+      material.dispose();
+      window.__heroMagicRingsCleanup = null;
+    };
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
+</script>
+<script>
+/* global gsap */
+/**
+ * TargetCursor — vanilla порт @react-bits (GSAP).
+ * Элементы: класс .cursor-target или авто-пометка интерактивов в initTargetCursorMarking().
+ */
+(function () {
+  'use strict';
+
+  var TARGET_SELECTOR = '.cursor-target';
+
+  function prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function isMobileDevice() {
+    var hasTouch = 'ontouchstart' in window || (navigator.maxTouchPoints || 0) > 0;
+    var small = window.innerWidth <= 768;
+    var ua = (navigator.userAgent || navigator.vendor || '').toLowerCase();
+    var mobileRe = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
+    return (hasTouch && small) || mobileRe.test(ua);
+  }
+
+  function markInteractiveElements() {
+    var sel =
+      'a[href], button, .btn, .lang-switch, .calc-option, .service-card, .social-card, .contact-form, .footer-links a';
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (!el.classList.contains('cursor-target')) el.classList.add('cursor-target');
+    });
+  }
+
+  function initTargetCursor(options) {
+    if (typeof gsap === 'undefined') return;
+    if (prefersReducedMotion()) return;
+    if (isMobileDevice()) return;
+
+    var spinDuration = options.spinDuration != null ? options.spinDuration : 2;
+    var hideDefaultCursor = options.hideDefaultCursor !== false;
+    var hoverDuration = options.hoverDuration != null ? options.hoverDuration : 0.2;
+    var parallaxOn = options.parallaxOn !== false;
+
+    markInteractiveElements();
+
+    var cursor = document.createElement('div');
+    cursor.className = 'target-cursor-wrapper';
+    cursor.innerHTML =
+      '<div class="target-cursor-dot"></div>' +
+      '<div class="target-cursor-corner corner-tl"></div>' +
+      '<div class="target-cursor-corner corner-tr"></div>' +
+      '<div class="target-cursor-corner corner-br"></div>' +
+      '<div class="target-cursor-corner corner-bl"></div>';
+    document.body.appendChild(cursor);
+
+    var dotRef = cursor.querySelector('.target-cursor-dot');
+    var cornersRef = cursor.querySelectorAll('.target-cursor-corner');
+    var spinTl = null;
+    var activeStrength = { val: 0 };
+    var targetCornerPositionsRef = null;
+    var tickerFnRef = null;
+    var isActiveRef = false;
+
+    var constants = { borderWidth: 3, cornerSize: 12 };
+
+    var originalCursor = document.body.style.cursor;
+    if (hideDefaultCursor) document.body.style.cursor = 'none';
+
+    function moveCursor(x, y) {
+      gsap.to(cursor, { x: x, y: y, duration: 0.1, ease: 'power3.out' });
+    }
+
+    gsap.set(cursor, {
+      xPercent: -50,
+      yPercent: -50,
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2
+    });
+
+    function createSpinTimeline() {
+      if (spinTl) spinTl.kill();
+      spinTl = gsap.timeline({ repeat: -1 }).to(cursor, { rotation: '+=360', duration: spinDuration, ease: 'none' });
+    }
+    createSpinTimeline();
+
+    var activeTarget = null;
+    var currentLeaveHandler = null;
+    var resumeTimeout = null;
+
+    function cleanupTarget(target) {
+      if (currentLeaveHandler && target) {
+        target.removeEventListener('mouseleave', currentLeaveHandler);
+      }
+      currentLeaveHandler = null;
+    }
+
+    function tickerFn() {
+      if (!targetCornerPositionsRef || !cornersRef.length) return;
+      var strength = activeStrength.val;
+      if (strength === 0) return;
+
+      var cursorX = gsap.getProperty(cursor, 'x');
+      var cursorY = gsap.getProperty(cursor, 'y');
+      var corners = Array.prototype.slice.call(cornersRef);
+
+      corners.forEach(function (corner, i) {
+        var currentX = gsap.getProperty(corner, 'x');
+        var currentY = gsap.getProperty(corner, 'y');
+        var targetX = targetCornerPositionsRef[i].x - cursorX;
+        var targetY = targetCornerPositionsRef[i].y - cursorY;
+        var finalX = currentX + (targetX - currentX) * strength;
+        var finalY = currentY + (targetY - currentY) * strength;
+        var duration = strength >= 0.99 ? (parallaxOn ? 0.2 : 0) : 0.05;
+        gsap.to(corner, {
+          x: finalX,
+          y: finalY,
+          duration: duration,
+          ease: duration === 0 ? 'none' : 'power1.out',
+          overwrite: 'auto'
+        });
+      });
+    }
+    tickerFnRef = tickerFn;
+
+    function moveHandler(e) {
+      moveCursor(e.clientX, e.clientY);
+    }
+
+    function scrollHandler() {
+      if (!activeTarget) return;
+      var mouseX = gsap.getProperty(cursor, 'x');
+      var mouseY = gsap.getProperty(cursor, 'y');
+      var under = document.elementFromPoint(mouseX, mouseY);
+      var still =
+        under &&
+        (under === activeTarget || (under.closest && under.closest(TARGET_SELECTOR) === activeTarget));
+      if (!still && currentLeaveHandler) currentLeaveHandler();
+    }
+
+    function mouseDownHandler() {
+      if (dotRef) gsap.to(dotRef, { scale: 0.7, duration: 0.3 });
+      gsap.to(cursor, { scale: 0.9, duration: 0.2 });
+    }
+    function mouseUpHandler() {
+      if (dotRef) gsap.to(dotRef, { scale: 1, duration: 0.3 });
+      gsap.to(cursor, { scale: 1, duration: 0.2 });
+    }
+
+    function enterHandler(e) {
+      var directTarget = e.target;
+      var allTargets = [];
+      var current = directTarget;
+      while (current && current !== document.body) {
+        if (current.matches && current.matches(TARGET_SELECTOR)) allTargets.push(current);
+        current = current.parentElement;
+      }
+      var target = allTargets[0] || null;
+      if (!target) return;
+      if (activeTarget === target) return;
+      if (activeTarget) cleanupTarget(activeTarget);
+      if (resumeTimeout) {
+        clearTimeout(resumeTimeout);
+        resumeTimeout = null;
+      }
+
+      activeTarget = target;
+      var corners = Array.prototype.slice.call(cornersRef);
+      corners.forEach(function (corner) {
+        gsap.killTweensOf(corner);
+      });
+
+      gsap.killTweensOf(cursor, 'rotation');
+      if (spinTl) spinTl.pause();
+      gsap.set(cursor, { rotation: 0 });
+
+      var rect = target.getBoundingClientRect();
+      var bw = constants.borderWidth;
+      var cs = constants.cornerSize;
+      var cursorX = gsap.getProperty(cursor, 'x');
+      var cursorY = gsap.getProperty(cursor, 'y');
+
+      targetCornerPositionsRef = [
+        { x: rect.left - bw, y: rect.top - bw },
+        { x: rect.right + bw - cs, y: rect.top - bw },
+        { x: rect.right + bw - cs, y: rect.bottom + bw - cs },
+        { x: rect.left - bw, y: rect.bottom + bw - cs }
+      ];
+
+      isActiveRef = true;
+      gsap.ticker.add(tickerFnRef);
+
+      gsap.to(activeStrength, {
+        val: 1,
+        duration: hoverDuration,
+        ease: 'power2.out'
+      });
+
+      corners.forEach(function (corner, i) {
+        gsap.to(corner, {
+          x: targetCornerPositionsRef[i].x - cursorX,
+          y: targetCornerPositionsRef[i].y - cursorY,
+          duration: 0.2,
+          ease: 'power2.out'
+        });
+      });
+
+      function leaveHandler() {
+        gsap.ticker.remove(tickerFnRef);
+        isActiveRef = false;
+        targetCornerPositionsRef = null;
+        gsap.killTweensOf(activeStrength);
+        activeStrength.val = 0;
+        activeTarget = null;
+
+        var corners2 = Array.prototype.slice.call(cornersRef);
+        gsap.killTweensOf(corners2);
+        var cornerSize = constants.cornerSize;
+        var positions = [
+          { x: -cornerSize * 1.5, y: -cornerSize * 1.5 },
+          { x: cornerSize * 0.5, y: -cornerSize * 1.5 },
+          { x: cornerSize * 0.5, y: cornerSize * 0.5 },
+          { x: -cornerSize * 1.5, y: cornerSize * 0.5 }
+        ];
+        var tl = gsap.timeline();
+        corners2.forEach(function (corner, index) {
+          tl.to(
+            corner,
+            { x: positions[index].x, y: positions[index].y, duration: 0.3, ease: 'power3.out' },
+            0
+          );
+        });
+
+        resumeTimeout = setTimeout(function () {
+          if (!activeTarget && cursor && spinTl) {
+            var currentRotation = gsap.getProperty(cursor, 'rotation');
+            var normalizedRotation = currentRotation % 360;
+            spinTl.kill();
+            spinTl = gsap
+              .timeline({ repeat: -1 })
+              .to(cursor, { rotation: '+=360', duration: spinDuration, ease: 'none' });
+            gsap.to(cursor, {
+              rotation: normalizedRotation + 360,
+              duration: spinDuration * (1 - normalizedRotation / 360),
+              ease: 'none',
+              onComplete: function () {
+                if (spinTl) spinTl.restart();
+              }
+            });
+          }
+          resumeTimeout = null;
+        }, 50);
+
+        cleanupTarget(target);
+      }
+
+      currentLeaveHandler = leaveHandler;
+      target.addEventListener('mouseleave', leaveHandler);
+    }
+
+    window.addEventListener('mousemove', moveHandler);
+    window.addEventListener('mouseover', enterHandler, { passive: true });
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    window.addEventListener('mousedown', mouseDownHandler);
+    window.addEventListener('mouseup', mouseUpHandler);
+
+    window.__targetCursorCleanup = function () {
+      if (tickerFnRef) gsap.ticker.remove(tickerFnRef);
+      window.removeEventListener('mousemove', moveHandler);
+      window.removeEventListener('mouseover', enterHandler);
+      window.removeEventListener('scroll', scrollHandler);
+      window.removeEventListener('mousedown', mouseDownHandler);
+      window.removeEventListener('mouseup', mouseUpHandler);
+      if (activeTarget) cleanupTarget(activeTarget);
+      if (spinTl) spinTl.kill();
+      document.body.style.cursor = originalCursor;
+      isActiveRef = false;
+      targetCornerPositionsRef = null;
+      activeStrength.val = 0;
+      if (cursor.parentNode) cursor.parentNode.removeChild(cursor);
+      window.__targetCursorCleanup = null;
+    };
+  }
+
+  function boot() {
+    initTargetCursor({
+      spinDuration: 2,
+      hideDefaultCursor: true,
+      hoverDuration: 0.2,
+      parallaxOn: true
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+
+</script>
+</body>
+</html>
