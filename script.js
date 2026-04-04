@@ -11,10 +11,12 @@ function updateHeroHeadingAriaLabel() {
   if (!h1) return;
   var line1 = h1.querySelector('[data-i18n="hero.titleLine1"]');
   var line2 = h1.querySelector('[data-i18n="hero.titleLine2"]');
-  if (!line1 || !line2) return;
+  var line3 = h1.querySelector('[data-i18n="hero.titleLine3"]');
+  if (!line1 || !line2 || !line3) return;
   var t1 = (line1.textContent || '').replace(/\s+/g, ' ').trim();
   var t2 = (line2.textContent || '').replace(/\s+/g, ' ').trim();
-  h1.setAttribute('aria-label', t1 + ' ' + t2);
+  var t3 = (line3.textContent || '').replace(/\s+/g, ' ').trim();
+  h1.setAttribute('aria-label', t1 + ' ' + t2 + ' ' + t3);
 }
 
 /** Анимация появления по буквам (аналог React SplitText + GSAP без платного плагина) */
