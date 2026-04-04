@@ -55,8 +55,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="target-cursor.css">
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <!-- NAVIGATION -->
 <nav class="navbar" id="navbar">
@@ -81,11 +84,13 @@
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-bg"></div>
+  <div id="heroMagicRings" class="hero-magic-rings" aria-hidden="true"></div>
   <div class="container">
     <div class="hero-content">
-      <h1>
-        <span data-i18n="hero.titleLine1">Дарьяна Ушакова | Промпт-инженер</span><br>
-        <span data-i18n="hero.titleLine2">&amp; Веб-кодер</span>
+      <h1 class="hero-heading" id="heroHeading">
+        <span class="hero-title-line" data-i18n="hero.titleLine1">Дарьяна Ушакова |</span><br>
+        <span class="hero-title-line" data-i18n="hero.titleLine2">Промпт-инженер</span><br>
+        <span class="hero-title-line hero-title-line--accent" data-i18n="hero.titleLine3">&amp; Веб-кодер</span>
       </h1>
       <p class="hero-subtitle" data-i18n="hero.subtitle">Помогаю говорить с нейросетями так, чтобы они стали соавторами</p>
       <p class="hero-text" data-i18n="hero.text">Автоматизирую рутину → освобождаю время для жизни</p>
@@ -266,7 +271,7 @@
         <p data-i18n="about.p2">По образованию экономист-бухгалтер (ни дня не работала по профессии 😅). Много путешествовала, открыла детский сад, воспитываю двух дочек (15 и 5 лет), люблю плести макраме.</p>
         <p data-i18n="about.p3">А потом случайно наткнулась на нейросети...</p>
         <p data-i18n="about.p4">Сначала использовала ИИ, чтобы улучшать фото своих работ по макраме. Потом прошла курс — и понеслось! Теперь не могу остановиться.</p>
-        <h3 style="margin: 30px 0 20px; color: var(--deep-blue);" data-i18n="about.h3">Почему я?</h3>
+        <h3 class="about-lead" data-i18n="about.h3">Почему я?</h3>
         <ul class="about-list">
           <li data-i18n="about.li1">Я не «технарь с рождения» — я помню, каково это, когда ничего не понятно</li>
           <li data-i18n="about.li2">Объясняю сложное на мемах и аналогиях из жизни</li>
@@ -386,7 +391,11 @@
 </footer>
 
 <!-- JAVASCRIPT -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
 <script src="i18n.js"></script>
 <script src="script.js"></script>
+<script src="magic-rings.js"></script>
+<script src="target-cursor.js"></script>
 </body>
 </html>
