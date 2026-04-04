@@ -27,17 +27,43 @@ await esbuild.build({
 });
 
 await esbuild.build({
+  entryPoints: [path.join(root, 'magic-rings.js')],
+  bundle: false,
+  minify: true,
+  outfile: path.join(dist, 'magic-rings.min.js'),
+  legalComments: 'none'
+});
+
+await esbuild.build({
+  entryPoints: [path.join(root, 'target-cursor.js')],
+  bundle: false,
+  minify: true,
+  outfile: path.join(dist, 'target-cursor.min.js'),
+  legalComments: 'none'
+});
+
+await esbuild.build({
   entryPoints: [path.join(root, 'styles.css')],
   bundle: false,
   minify: true,
   outfile: path.join(dist, 'styles.min.css')
 });
 
+await esbuild.build({
+  entryPoints: [path.join(root, 'target-cursor.css')],
+  bundle: false,
+  minify: true,
+  outfile: path.join(dist, 'target-cursor.min.css')
+});
+
 const htmlPath = path.join(root, htmlName);
 let html = await fs.promises.readFile(htmlPath, 'utf8');
 html = html.replace(/href="styles\.css"/g, 'href="styles.min.css"');
+html = html.replace(/href="target-cursor\.css"/g, 'href="target-cursor.min.css"');
 html = html.replace(/src="i18n\.js"/g, 'src="i18n.min.js"');
 html = html.replace(/src="script\.js"/g, 'src="script.min.js"');
+html = html.replace(/src="magic-rings\.js"/g, 'src="magic-rings.min.js"');
+html = html.replace(/src="target-cursor\.js"/g, 'src="target-cursor.min.js"');
 await fs.promises.writeFile(path.join(dist, 'index.html'), html, 'utf8');
 
 const assets = ['hero-image.png', 'about-photo.png'];
@@ -50,4 +76,4 @@ for (const file of assets) {
   }
 }
 
-console.log('Сборка: dist/index.html, i18n.min.js, styles.min.css, script.min.js');
+console.log('Сборка: dist/index.html + min JS/CSS (включая magic-rings, target-cursor)');
