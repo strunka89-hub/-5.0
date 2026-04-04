@@ -1,6 +1,114 @@
-/* global SITE_I18N, SITE_CALC_TIMELINES */
+/* global SITE_I18N, SITE_CALC_TIMELINES, gsap */
 
 var LANG_STORAGE_KEY = 'siteLang';
+var NAV_SECTION_IDS = ['services', 'calculator', 'about', 'social', 'contacts'];
+var calcPriceAnimGen = 0;
+var heroTitleTween = null;
+
+/** Полное имя заголовка для aria-label (читалка не зачитывает по буквам из .hero-char) */
+function updateHeroHeadingAriaLabel() {
+  var h1 = document.querySelector('.hero-heading');
+  if (!h1) return;
+  var line1 = h1.querySelector('[data-i18n="hero.titleLine1"]');
+  var line2 = h1.querySelector('[data-i18n="hero.titleLine2"]');
+  if (!line1 || !line2) return;
+  var t1 = (line1.textContent || '').replace(/\s+/g, ' ').trim();
+  var t2 = (line2.textContent || '').replace(/\s+/g, ' ').trim();
+  h1.setAttribute('aria-label', t1 + ' ' + t2);
+}
+
+/** Анимация появления по буквам (аналог React SplitText + GSAP без платного плагина) */
+function initHeroTitleAnimation() {
+  var h1 = document.querySelector('.hero-heading');
+  if (!h1 || typeof gsap === 'undefined') return;
+
+  updateHeroHeadingAriaLabel();
+
+  var lines = h1.querySelectorAll('.hero-title-line');
+  if (!lines.length) return;
+
+  if (prefersReducedMotion()) return;
+
+  var oldChars = h1.querySelectorAll('.hero-char');
+  if (oldChars.length) gsap.killTweensOf(oldChars);
+  if (heroTitleTween) {
+    heroTitleTween.kill();
+    heroTitleTween = null;
+  }
+
+  lines.forEach(function(line) {
+    var text = line.textContent;
+    line.textContent = '';
+    for (var i = 0; i < text.length; i++) {
+      var ch = text.charAt(i);
+      var span = document.createElement('span');
+      span.className = 'hero-char';
+      span.setAttribute('aria-hidden', 'true');
+      span.textContent = ch === ' ' ? '\u00A0' : ch;
+      line.appendChild(span);
+    }
+  });
+
+  var chars = h1.querySelectorAll('.hero-char');
+  if (!chars.length) return;
+
+  gsap.set(chars, { opacity: 0, y: 40, force3D: true });
+  heroTitleTween = gsap.to(chars, {
+    opacity: 1,
+    y: 0,
+    duration: 0.9,
+    ease: 'power3.out',
+    stagger: 0.11,
+    overwrite: 'auto',
+    onComplete: function() {
+      heroTitleTween = null;
+    }
+  });
+}
+
+function scheduleHeroTitleAnimation() {
+  function run() {
+    requestAnimationFrame(initHeroTitleAnimation);
+  }
+  if (typeof document.fonts !== 'undefined' && document.fonts.ready) {
+    document.fonts.ready.then(run);
+  } else {
+    run();
+  }
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function animateCalcPrice(el, finalAmount, loc, prefix) {
+  if (!el) return;
+  if (prefersReducedMotion()) {
+    el.textContent = prefix + ' ' + finalAmount.toLocaleString(loc) + ' ₽';
+    return;
+  }
+  calcPriceAnimGen += 1;
+  var gen = calcPriceAnimGen;
+  var start = performance.now();
+  var duration = 680;
+  var from = 0;
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+  function tick(now) {
+    if (gen !== calcPriceAnimGen) return;
+    var t = Math.min(1, (now - start) / duration);
+    var eased = easeOutCubic(t);
+    var current = from + (finalAmount - from) * eased;
+    el.textContent = prefix + ' ' + Math.round(current).toLocaleString(loc) + ' ₽';
+    if (t < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = prefix + ' ' + finalAmount.toLocaleString(loc) + ' ₽';
+    }
+  }
+  requestAnimationFrame(tick);
+}
 
 function getSiteLocale() {
   try {
@@ -55,9 +163,13 @@ function applySiteLocale(lang) {
   resetCalcResultDisplay();
   var sub = document.querySelector('#contactForm button[type="submit"]');
   if (sub && !sub.disabled) sub.textContent = t('form.submit');
+
+  updateHeroHeadingAriaLabel();
+  scheduleHeroTitleAnimation();
 }
 
 function resetCalcResultDisplay() {
+  calcPriceAnimGen += 1;
   var res = document.getElementById('calcResult');
   if (res && res.classList.contains('active')) res.classList.remove('active');
   var lang = getSiteLocale();
@@ -226,12 +338,15 @@ function calculatePrice() {
   const adjustment = businessAdjustments[business.value];
   const finalPrice = basePrice * multiplier + adjustment;
 
-  document.getElementById('calcPrice').textContent =
-    t('calc.from') + ' ' + finalPrice.toLocaleString(loc) + ' ₽';
   document.getElementById('calcTimeline').textContent =
     t('calc.timeline') + ' ' + timelines[service.value];
-  document.getElementById('calcResult').classList.add('active');
-  document.getElementById('calcResult').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  var calcResultEl = document.getElementById('calcResult');
+  calcResultEl.classList.add('active');
+  animateCalcPrice(document.getElementById('calcPrice'), finalPrice, loc, t('calc.from'));
+  calcResultEl.scrollIntoView({
+    behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+    block: 'nearest'
+  });
 }
 
 // CONTACT FORM
@@ -317,13 +432,68 @@ function submitForm(event) {
 function initSmoothScrollAndMenuClose() {
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
-      e.preventDefault();
       const href = this.getAttribute('href');
-      const target = href ? document.querySelector(href) : null;
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (!href || href === '#') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+        block: 'start'
+      });
       closeMobileMenu();
     });
   });
+}
+
+function initScrollProgressAndNavHighlight() {
+  var bar = document.getElementById('scrollProgress');
+  var nav = document.querySelector('.nav-links');
+  var navbar = document.getElementById('navbar');
+  var links = nav ? nav.querySelectorAll('a[href^="#"]') : [];
+  function clearNavActive() {
+    links.forEach(function(a) {
+      a.classList.remove('nav-link--active');
+      a.removeAttribute('aria-current');
+    });
+  }
+  function update() {
+    if (bar) {
+      var doc = document.documentElement;
+      var scrollable = doc.scrollHeight - doc.clientHeight;
+      var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    }
+    if (!nav || links.length === 0) return;
+    clearNavActive();
+    if (window.scrollY < 72) return;
+    var threshold = (navbar ? navbar.offsetHeight : 0) + 40;
+    var pos = window.scrollY + threshold;
+    var currentId = '';
+    NAV_SECTION_IDS.forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= pos) currentId = id;
+    });
+    if (!currentId) return;
+    var active = nav.querySelector('a[href="#' + currentId + '"]');
+    if (active) {
+      active.classList.add('nav-link--active');
+      active.setAttribute('aria-current', 'page');
+    }
+  }
+  var ticking = false;
+  function onScrollOrResize() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(function() {
+        ticking = false;
+        update();
+      });
+    }
+  }
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize, { passive: true });
+  update();
 }
 
 function initContactFieldHighlight() {
@@ -368,6 +538,7 @@ function init() {
   initContactFieldHighlight();
   initFadeInObserver();
   initMobileMenuA11y();
+  initScrollProgressAndNavHighlight();
 }
 
 if (document.readyState === 'loading') {
